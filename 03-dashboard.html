@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Advisor Capital — Member dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Styling to ensure nav bar background matches header and footer */
+    .side {
+      background-color: #0b132b !important;
+      color: #ffffff;
+    }
+    .side .kicker {
+      color: #D4A84A;
+    }
+    .side a {
+      color: #ffffff;
+      opacity: 0.85;
+    }
+    .side a:hover, .side a.on {
+      color: #D4A84A;
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+  <div class="draft" data-en="Draft for confirmation · Premium buyer view · Sample data only" data-fr="Brouillon pour confirmation · Vue Acheteur Premium · Données fictives">Draft for confirmation · Premium buyer view · Sample data only</div>
+  
+  <header class="top" style="background-color: #0b132b; border-bottom: 3px solid #D4A84A; padding: 24px 32px; display: flex; align-items: center; justify-content: space-between; width: 100%; box-sizing: border-box;">
+    <!-- BRAND HEADER BAR -->
+    <div style="display: flex; align-items: center; gap: 12px;">
+      <img src="https://www.advisorcapital.ca/wp-content/uploads/2026/06/icon_gold_optimized.svg" alt="Advisor Capital Logo" width="36" style="display: block; width: 36px; max-width: 36px; height: auto;">
+      <div>
+        <div style="font-size: 35px; font-weight: 700; letter-spacing: 1px; color: #ffffff; font-family: 'Libre Baskerville', Georgia, serif; line-height: 1;">
+          Advisor<span style="color:#D4A84A;">Capital</span>
+        </div>
+        <div style="color: #ffffff; font-size: 9px; font-weight: normal; letter-spacing: 0.09rem; text-transform: uppercase; margin-top: 10px; font-family: 'Plus Jakarta Sans', Arial, sans-serif; line-height: 1;">
+          ACQUISITION &amp; SUCCESSION PLATFORM · CANADA
+        </div>
+      </div>
+    </div>
+    <div class="top-right" style="display: flex; align-items: center;">
+      <span class="avatar">AC</span>
+    </div>
+  </header>
+
+  <div class="shell">
+    <aside class="side">
+      <div class="kicker" data-en="Account" data-fr="Compte">Account</div>
+      <a href="03-dashboard.html" class="on" data-en="Dashboard" data-fr="Tableau de bord">Dashboard</a>
+      <a href="02-my-alerts.html" data-en="My Alerts" data-fr="Mes alertes">My Alerts</a>
+      <a href="04-opportunities.html" data-en="Opportunities" data-fr="Occasions">Opportunities</a>
+      <a href="01-billing.html" data-en="Subscription" data-fr="Abonnement">Subscription</a>
+    </aside>
+    <main class="main">
+      <div class="search-top" style="align-items:flex-end;">
+        <div>
+          <h1 data-en="Good morning." data-fr="Bonjour.">Good morning.</h1>
+          <p class="lede" data-en="Listings authorized for release that match your saved searches." data-fr="Inscriptions autorisées qui correspondent à vos recherches enregistrées.">Listings authorized for release that match your saved searches.</p>
+        </div>
+        <div class="card" style="padding:14px 16px;min-width:240px;">
+          <span class="pill gold" data-en="Premium Buyer" data-fr="Acheteur Premium">Premium Buyer</span>
+          <p class="help" style="margin:8px 0 0;" data-en="Active until 12 November 2026. Alerts are on." data-fr="Actif jusqu'au 12 novembre 2026. Les alertes sont activées.">Active until 12 November 2026. Alerts are on.</p>
+        </div>
+      </div>
+
+      <div class="grid-3" style="margin-bottom:16px;">
+        <div class="stat"><span class="meta-label" data-en="Active searches" data-fr="Recherches actives">Active searches</span><b>1</b><span class="help" data-en="1 paused" data-fr="1 suspendue">1 paused</span></div>
+        <div class="stat"><span class="meta-label" data-en="New authorized listings" data-fr="Nouvelles inscriptions autorisées">New authorized listings</span><b>1</b><span class="help" data-en="Since Monday" data-fr="Depuis lundi">Since Monday</span></div>
+        <div class="stat"><span class="meta-label" data-en="Weekly roundup" data-fr="Sommaire hebdomadaire">Weekly roundup</span><b data-en="On" data-fr="Oui">On</b><span class="help" data-en="Mondays, 8:00 Toronto, if there is a match" data-fr="Les lundis, 8 h, heure de Toronto, s'il y a une correspondance">Mondays, 8:00 Toronto, if there is a match</span></div>
+      </div>
+
+      <div class="split">
+        <section class="card">
+          <div class="search-top" style="margin-bottom:8px;">
+            <h2 data-en="Authorized listings for you" data-fr="Inscriptions autorisées pour vous">Authorized listings for you</h2>
+            <a href="04-opportunities.html" data-en="View all" data-fr="Tout voir">View all</a>
+          </div>
+          <p class="sub" data-en="Seller identities are not shown. You are seeing these before public release." data-fr="L'identité des vendeurs n'est pas affichée. Vous les voyez avant la diffusion publique.">Seller identities are not shown. You are seeing these before public release.</p>
+          <table>
+            <thead>
+              <tr>
+                <th data-en="Practice" data-fr="Clientèle">Practice</th>
+                <th data-en="Province" data-fr="Province">Province</th>
+                <th>AUM</th>
+                <th data-en="Your search" data-fr="Votre recherche">Your search</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td data-en="Fee-based practice" data-fr="Clientèle à honoraires">Fee-based practice</td>
+                <td>Ontario</td>
+                <td>CAD $18M</td>
+                <td>Ontario fee-based</td>
+                <td><a class="btn btn-ghost btn-sm" href="05-opportunity-detail.html" data-en="View" data-fr="Voir">View</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+        <section class="card">
+          <h2 data-en="Alerts" data-fr="Alertes">Alerts</h2>
+          <div class="check"><span data-en="Instant search" data-fr="Recherche instantanée">Instant search</span><strong>Ontario fee-based</strong></div>
+          <div class="check"><span data-en="Weekly search" data-fr="Recherche hebdomadaire">Weekly search</span><strong data-en="Paused" data-fr="Suspendue">Paused</strong></div>
+          <div class="check"><span data-en="Language of the instant search" data-fr="Langue de la recherche instantanée">Language of the instant search</span><strong>English</strong></div>
+          <a class="btn btn-gold" href="02-my-alerts.html" style="margin-top:14px;" data-en="Manage alerts" data-fr="Gérer mes alertes">Manage alerts</a>
+          <p class="help" style="margin-top:12px;" data-en="A free account can browse public listings and receives no alert emails." data-fr="Un compte gratuit peut consulter les inscriptions publiques et ne reçoit aucun courriel d'alerte.">A free account can browse public listings and receives no alert emails.</p>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <footer class="site-footer">
+    <div class="site-footer__contact">
+      <div class="site-footer__brand">
+        <img src="https://www.advisorcapital.ca/wp-content/uploads/2026/06/icon_gold_optimized.svg" alt="Advisor Capital Logo" width="36">
+        <div>
+          <div class="site-footer__wordmark">Advisor<span>Capital</span></div>
+          <div class="site-footer__tagline">ACQUISITION &amp; SUCCESSION PLATFORM · CANADA</div>
+        </div>
+      </div>
+      <div class="site-footer__links">
+        <a href="mailto:info@advisorcapital.ca">info@advisorcapital.ca</a>
+        <a href="https://advisorcapital.ca" target="_blank" rel="noopener noreferrer">AdvisorCapital.ca</a>
+      </div>
+    </div>
+    <p class="site-footer__disclosure">
+      <strong>Regulatory Disclosure:</strong> Advisor Capital Inc. is an independent technology platform facilitating introductions between financial professionals. Advisor Capital is NOT a registered lender, financial advisor, investment dealer, or mortgage broker, and is not supervised by the Autorité des marchés financiers (AMF) or CIRO in connection with platform activities. This preliminary report is generated for informational purposes only and does not constitute a formal appraisal, legal advice, or financial planning opinion.
+    </p>
+    <p class="site-footer__copyright">© 2026 Advisor Capital Inc. All rights reserved.</p>
+  </footer>
+  <script src="lang.js"></script>
+</body>
+</html>

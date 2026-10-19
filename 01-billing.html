@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Advisor Capital — Subscription and billing</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Styling to ensure nav bar background matches header and footer */
+    .side {
+      background-color: #0b132b !important;
+      color: #ffffff;
+    }
+    .side .kicker {
+      color: #D4A84A;
+    }
+    .side a {
+      color: #ffffff;
+      opacity: 0.85;
+    }
+    .side a:hover, .side a.on {
+      color: #D4A84A;
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+  <div class="draft" data-en="Draft for confirmation · Sample data only · Card updates and invoices open in Stripe" data-fr="Brouillon pour confirmation · Données fictives · La carte et les factures s'ouvrent dans Stripe">Draft for confirmation · Sample data only · Card updates and invoices open in Stripe</div>
+  
+  <header class="top" style="background-color: #0b132b; border-bottom: 3px solid #D4A84A; padding: 24px 32px; display: flex; align-items: center; justify-content: space-between; width: 100%; box-sizing: border-box;">
+    <!-- BRAND HEADER BAR -->
+    <div style="display: flex; align-items: center; gap: 12px;">
+      <img src="https://www.advisorcapital.ca/wp-content/uploads/2026/06/icon_gold_optimized.svg" alt="Advisor Capital Logo" width="36" style="display: block; width: 36px; max-width: 36px; height: auto;">
+      <div>
+        <div style="font-size: 35px; font-weight: 700; letter-spacing: 1px; color: #ffffff; font-family: 'Libre Baskerville', Georgia, serif; line-height: 1;">
+          Advisor<span style="color:#D4A84A;">Capital</span>
+        </div>
+        <div style="color: #ffffff; font-size: 9px; font-weight: normal; letter-spacing: 0.09rem; text-transform: uppercase; margin-top: 10px; font-family: 'Plus Jakarta Sans', Arial, sans-serif; line-height: 1;">
+          ACQUISITION &amp; SUCCESSION PLATFORM · CANADA
+        </div>
+      </div>
+    </div>
+    <div class="top-right" style="display: flex; align-items: center;">
+      <span class="avatar">AC</span>
+    </div>
+  </header>
+
+  <div class="shell">
+    <aside class="side">
+      <div class="kicker" data-en="Account" data-fr="Compte">Account</div>
+      <a href="03-dashboard.html" data-en="Dashboard" data-fr="Tableau de bord">Dashboard</a>
+      <a href="02-my-alerts.html" data-en="My Alerts" data-fr="Mes alertes">My Alerts</a>
+      <a href="04-opportunities.html" data-en="Opportunities" data-fr="Occasions">Opportunities</a>
+      <a href="01-billing.html" class="on" data-en="Subscription" data-fr="Abonnement">Subscription</a>
+    </aside>
+    <main class="main">
+      <h1 data-en="Subscription and billing" data-fr="Abonnement et facturation">Subscription and billing</h1>
+      <p class="lede" data-en="Premium Buyer is a notification membership. It starts after payment is confirmed. Taxes are extra." data-fr="Acheteur Premium est un abonnement d'alertes. Il commence une fois le paiement confirmé. Les taxes sont en sus.">Premium Buyer is a notification membership. It starts after payment is confirmed. Taxes are extra.</p>
+
+      <div class="card hero-plan" style="margin-bottom:16px;">
+        <div class="plan-id">
+          <div class="seal">♛</div>
+          <div>
+            <h2 data-en="Premium Buyer" data-fr="Acheteur Premium">Premium Buyer</h2>
+            <div style="margin-top:6px;"><span class="pill" data-en="Active" data-fr="Actif">Active</span></div>
+            <p class="sub" style="margin:8px 0 0;" data-en="Alerts for authorized listings that match your saved searches, before public release." data-fr="Alertes pour les inscriptions autorisées qui correspondent à vos recherches, avant la diffusion publique.">Alerts for authorized listings that match your saved searches, before public release.</p>
+          </div>
+        </div>
+        <div>
+          <div class="meta-label" data-en="Next renewal" data-fr="Prochain renouvellement">Next renewal</div>
+          <div class="meta-value">12 Nov 2026</div>
+        </div>
+        <div>
+          <div class="meta-label" data-en="Plan" data-fr="Forfait">Plan</div>
+          <div class="meta-value">CAD $99 / month</div>
+        </div>
+        <a class="btn btn-gold" href="#plans" data-en="Manage plan" data-fr="Gérer le forfait">Manage plan</a>
+      </div>
+
+      <div class="stack">
+        <section class="card">
+          <h2 data-en="Payment method" data-fr="Mode de paiement">Payment method</h2>
+          <p class="sub" data-en="The subscription renews automatically with this card. Updating the card opens the Stripe customer portal." data-fr="L'abonnement se renouvelle automatiquement avec cette carte. La modification ouvre le portail client Stripe.">The subscription renews automatically with this card. Updating the card opens the Stripe customer portal.</p>
+          <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;">
+            <div><strong>Visa •••• 4242</strong><div class="help">Expires 04/2028</div></div>
+            <button class="btn btn-ghost btn-sm" type="button" data-en="Update card" data-fr="Mettre à jour la carte">Update card</button>
+          </div>
+        </section>
+
+        <section class="card">
+          <h2 data-en="Billing history" data-fr="Historique de facturation">Billing history</h2>
+          <p class="sub" data-en="Invoices show GST, QST, or HST according to the billing province." data-fr="Les factures indiquent la TPS, la TVQ ou la TVH selon la province de facturation.">Invoices show GST, QST, or HST according to the billing province.</p>
+          <table>
+            <thead>
+              <tr>
+                <th data-en="Date" data-fr="Date">Date</th>
+                <th data-en="Description" data-fr="Description">Description</th>
+                <th data-en="Amount" data-fr="Montant">Amount</th>
+                <th data-en="Status" data-fr="Statut">Status</th>
+                <th data-en="Invoice" data-fr="Facture">Invoice</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>12 Oct 2026</td>
+                <td data-en="Premium Buyer, monthly" data-fr="Acheteur Premium, mensuel">Premium Buyer, monthly</td>
+                <td>CAD $99.00</td>
+                <td><span class="pill" data-en="Paid" data-fr="Payée">Paid</span></td>
+                <td><button class="btn btn-ghost btn-sm" type="button" data-en="Download" data-fr="Télécharger">Download</button></td>
+              </tr>
+              <tr>
+                <td>12 Sep 2026</td>
+                <td data-en="Premium Buyer, monthly" data-fr="Acheteur Premium, mensuel">Premium Buyer, monthly</td>
+                <td>CAD $99.00</td>
+                <td><span class="pill" data-en="Paid" data-fr="Payée">Paid</span></td>
+                <td><button class="btn btn-ghost btn-sm" type="button" data-en="Download" data-fr="Télécharger">Download</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="card" id="plans">
+          <h2 data-en="Plan options" data-fr="Options de forfait">Plan options</h2>
+          <p class="sub" data-en="Both plans include the same Premium alerts. There is no free trial. Applicable taxes are extra." data-fr="Les deux forfaits comprennent les mêmes alertes Premium. Il n'y a pas d'essai gratuit. Les taxes applicables sont en sus.">Both plans include the same Premium alerts. There is no free trial. Applicable taxes are extra.</p>
+          <div class="grid-2">
+            <div class="search-item on">
+              <div class="search-top">
+                <strong data-en="Monthly · current plan" data-fr="Mensuel · forfait actuel">Monthly · current plan</strong>
+                <span class="pill" data-en="CAD $99" data-fr="99 $ CA">CAD $99</span>
+              </div>
+              <p class="help" data-en="Renews each month until cancelled." data-fr="Se renouvelle chaque mois jusqu'à annulation.">Renews each month until cancelled.</p>
+            </div>
+            <div class="search-item">
+              <div class="search-top">
+                <strong data-en="Annual · 12 months prepaid" data-fr="Annuel · 12 mois prépayés">Annual · 12 months prepaid</strong>
+                <span class="pill gold" data-en="CAD $999" data-fr="999 $ CA">CAD $999</span>
+              </div>
+              <p class="help" data-en="Saves CAD $189 compared with 12 monthly payments." data-fr="Économise 189 $ CA par rapport à 12 paiements mensuels.">Saves CAD $189 compared with 12 monthly payments.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="card">
+          <div style="display:flex;justify-content:space-between;gap:16px;align-items:center;flex-wrap:wrap;">
+            <div>
+              <h2 data-en="Cancellation" data-fr="Annulation">Cancellation</h2>
+              <p class="sub" style="margin-bottom:0;" data-en="You can cancel at any time. Premium access and alerts stay active until 12 November 2026. Subscription fees are non-refundable, subject to applicable law." data-fr="Vous pouvez annuler en tout temps. L'accès Premium et les alertes demeurent actifs jusqu'au 12 novembre 2026. Les frais d'abonnement ne sont pas remboursables, sous réserve de la loi applicable.">You can cancel at any time. Premium access and alerts stay active until 12 November 2026. Subscription fees are non-refundable, subject to applicable law.</p>
+            </div>
+            <button class="btn btn-danger" type="button" data-en="Cancel subscription" data-fr="Annuler l'abonnement">Cancel subscription</button>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <footer class="site-footer">
+    <div class="site-footer__contact">
+      <div class="site-footer__brand">
+        <img src="https://www.advisorcapital.ca/wp-content/uploads/2026/06/icon_gold_optimized.svg" alt="Advisor Capital Logo" width="36">
+        <div>
+          <div class="site-footer__wordmark">Advisor<span>Capital</span></div>
+          <div class="site-footer__tagline">ACQUISITION &amp; SUCCESSION PLATFORM · CANADA</div>
+        </div>
+      </div>
+      <div class="site-footer__links">
+        <a href="mailto:info@advisorcapital.ca">info@advisorcapital.ca</a>
+        <a href="https://advisorcapital.ca" target="_blank" rel="noopener noreferrer">AdvisorCapital.ca</a>
+      </div>
+    </div>
+    <p class="site-footer__disclosure">
+      <strong>Regulatory Disclosure:</strong> Advisor Capital Inc. is an independent technology platform facilitating introductions between financial professionals. Advisor Capital is NOT a registered lender, financial advisor, investment dealer, or mortgage broker, and is not supervised by the Autorité des marchés financiers (AMF) or CIRO in connection with platform activities. This preliminary report is generated for informational purposes only and does not constitute a formal appraisal, legal advice, or financial planning opinion.
+    </p>
+    <p class="site-footer__copyright">© 2026 Advisor Capital Inc. All rights reserved.</p>
+  </footer>
+  <script src="lang.js"></script>
+</body>
+</html>

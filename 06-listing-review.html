@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Advisor Capital — Listing review</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Styling to ensure nav bar background matches header and footer */
+    .side {
+      background-color: #0b132b !important;
+      color: #ffffff;
+    }
+    .side .kicker {
+      color: #D4A84A;
+    }
+    .side a {
+      color: #ffffff;
+      opacity: 0.85;
+    }
+    .side a:hover, .side a.on {
+      color: #D4A84A;
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+  <div class="draft">Draft for confirmation · Administrator only · Saving a listing sends nothing</div>
+  
+  <header class="top" style="background-color: #0b132b; border-bottom: 3px solid #D4A84A; padding: 24px 32px; display: flex; align-items: center; justify-content: space-between; width: 100%; box-sizing: border-box;">
+    <!-- BRAND HEADER BAR -->
+    <div style="display: flex; align-items: center; gap: 12px;">
+      <img src="https://www.advisorcapital.ca/wp-content/uploads/2026/06/icon_gold_optimized.svg" alt="Advisor Capital Logo" width="36" style="display: block; width: 36px; max-width: 36px; height: auto;">
+      <div>
+        <div style="font-size: 35px; font-weight: 700; letter-spacing: 1px; color: #ffffff; font-family: 'Libre Baskerville', Georgia, serif; line-height: 1;">
+          Advisor<span style="color:#D4A84A;">Capital</span>
+        </div>
+        <div style="color: #ffffff; font-size: 9px; font-weight: normal; letter-spacing: 0.09rem; text-transform: uppercase; margin-top: 10px; font-family: 'Plus Jakarta Sans', Arial, sans-serif; line-height: 1;">
+          ACQUISITION &amp; SUCCESSION PLATFORM · CANADA
+        </div>
+      </div>
+    </div>
+    <div class="top-right" style="display: flex; align-items: center;">
+      <span class="avatar">AD</span>
+    </div>
+  </header>
+
+  <div class="shell">
+    <aside class="side">
+      <div class="kicker">Admin</div>
+      <a href="06-listing-review.html" class="on">Listing review</a>
+      <a href="07-authorize-alert.html">Authorize alert</a>
+    </aside>
+    <main class="main">
+      <h1>Listing review</h1>
+      <p class="lede">A new or edited listing waits here. Matching can be counted, and no email goes out until an administrator authorizes it.</p>
+      <div class="tabs">
+        <button class="tab on" type="button">Pending review (3)</button>
+        <button class="tab" type="button">Held (1)</button>
+        <button class="tab" type="button">Authorized (12)</button>
+      </div>
+      <section class="card" style="margin-bottom:16px;">
+        <table>
+          <thead>
+            <tr>
+              <th>Listing</th>
+              <th>Type</th>
+              <th>Province</th>
+              <th>Practice</th>
+              <th>Premium matches</th>
+              <th>Status</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>LST-2026-0142</td>
+              <td>For sale</td>
+              <td>Ontario</td>
+              <td>Fee-Based</td>
+              <td>6</td>
+              <td><span class="pill gold">Pending review</span></td>
+              <td><a class="btn btn-navy btn-sm" href="07-authorize-alert.html">Review</a></td>
+            </tr>
+            <tr>
+              <td>LST-2026-0140</td>
+              <td>Partial sale</td>
+              <td>Alberta</td>
+              <td>Insurance</td>
+              <td>2</td>
+              <td><span class="pill gold">Pending review</span></td>
+              <td><a class="btn btn-ghost btn-sm" href="07-authorize-alert.html">Review</a></td>
+            </tr>
+            <tr>
+              <td>LST-2026-0138</td>
+              <td>For sale</td>
+              <td>Quebec</td>
+              <td>Mixed</td>
+              <td>0</td>
+              <td><span class="pill gold">Pending review</span></td>
+              <td><a class="btn btn-ghost btn-sm" href="07-authorize-alert.html">Review</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      <section class="card">
+        <div class="search-top">
+          <h2>LST-2026-0142 · Fee-based practice</h2>
+          <span class="pill gold">Pending review</span>
+        </div>
+        <p class="sub">Submitted 17 October 2026. Six active Premium searches match. Free accounts are not in that count.</p>
+        <div class="kv">
+          <div><span>AUM</span><strong>CAD $18M · band $5M–$20M</strong></div>
+          <div><span>Revenue</span><strong>CAD $185,000</strong></div>
+          <div><span>Households</span><strong>140</strong></div>
+          <div><span>Recurring</span><strong>78%</strong></div>
+          <div><span>Structure / VTB / financing</span><strong>Full · VTB yes · Financing no</strong></div>
+          <div><span>If authorized</span><strong>Public 48 hours later</strong></div>
+        </div>
+        <div class="row-actions" style="margin-top:16px;">
+          <a class="btn btn-gold" href="07-authorize-alert.html">Open alert preview</a>
+          <button class="btn btn-ghost" type="button">Hold</button>
+          <button class="btn btn-ghost" type="button">Edit listing</button>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <footer class="site-footer">
+    <div class="site-footer__contact">
+      <div class="site-footer__brand">
+        <img src="https://www.advisorcapital.ca/wp-content/uploads/2026/06/icon_gold_optimized.svg" alt="Advisor Capital Logo" width="36">
+        <div>
+          <div class="site-footer__wordmark">Advisor<span>Capital</span></div>
+          <div class="site-footer__tagline">ACQUISITION &amp; SUCCESSION PLATFORM · CANADA</div>
+        </div>
+      </div>
+      <div class="site-footer__links">
+        <a href="mailto:info@advisorcapital.ca">info@advisorcapital.ca</a>
+        <a href="https://advisorcapital.ca" target="_blank" rel="noopener noreferrer">AdvisorCapital.ca</a>
+      </div>
+    </div>
+    <p class="site-footer__disclosure">
+      <strong>Regulatory Disclosure:</strong> Advisor Capital Inc. is an independent technology platform facilitating introductions between financial professionals. Advisor Capital is NOT a registered lender, financial advisor, investment dealer, or mortgage broker, and is not supervised by the Autorité des marchés financiers (AMF) or CIRO in connection with platform activities. This preliminary report is generated for informational purposes only and does not constitute a formal appraisal, legal advice, or financial planning opinion.
+    </p>
+    <p class="site-footer__copyright">© 2026 Advisor Capital Inc. All rights reserved.</p>
+  </footer>
+  <script src="lang.js"></script>
+</body>
+</html>

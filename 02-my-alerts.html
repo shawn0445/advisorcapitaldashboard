@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Advisor Capital — My Alerts</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Styling to ensure nav bar background matches header and footer */
+    .side {
+      background-color: #0b132b !important;
+      color: #ffffff;
+    }
+    .side .kicker {
+      color: #D4A84A;
+    }
+    .side a {
+      color: #ffffff;
+      opacity: 0.85;
+    }
+    .side a:hover, .side a.on {
+      color: #D4A84A;
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+  <div class="draft" data-en="Draft for confirmation · Premium only · An empty field means any" data-fr="Brouillon pour confirmation · Premium seulement · Un champ vide signifie tous">Draft for confirmation · Premium only · An empty field means any</div>
+  
+  <header class="top" style="background-color: #0b132b; border-bottom: 3px solid #D4A84A; padding: 24px 32px; display: flex; align-items: center; justify-content: space-between; width: 100%; box-sizing: border-box;">
+    <!-- BRAND HEADER BAR -->
+    <div style="display: flex; align-items: center; gap: 12px;">
+      <img src="https://www.advisorcapital.ca/wp-content/uploads/2026/06/icon_gold_optimized.svg" alt="Advisor Capital Logo" width="36" style="display: block; width: 36px; max-width: 36px; height: auto;">
+      <div>
+        <div style="font-size: 35px; font-weight: 700; letter-spacing: 1px; color: #ffffff; font-family: 'Libre Baskerville', Georgia, serif; line-height: 1;">
+          Advisor<span style="color:#D4A84A;">Capital</span>
+        </div>
+        <div style="color: #ffffff; font-size: 9px; font-weight: normal; letter-spacing: 0.09rem; text-transform: uppercase; margin-top: 10px; font-family: 'Plus Jakarta Sans', Arial, sans-serif; line-height: 1;">
+          ACQUISITION &amp; SUCCESSION PLATFORM · CANADA
+        </div>
+      </div>
+    </div>
+    <div class="top-right" style="display: flex; align-items: center;">
+      <span class="avatar">AC</span>
+    </div>
+  </header>
+
+  <div class="shell">
+    <aside class="side">
+      <div class="kicker" data-en="Account" data-fr="Compte">Account</div>
+      <a href="03-dashboard.html" data-en="Dashboard" data-fr="Tableau de bord">Dashboard</a>
+      <a href="02-my-alerts.html" class="on" data-en="My Alerts" data-fr="Mes alertes">My Alerts</a>
+      <a href="04-opportunities.html" data-en="Opportunities" data-fr="Occasions">Opportunities</a>
+      <a href="01-billing.html" data-en="Subscription" data-fr="Abonnement">Subscription</a>
+    </aside>
+    <main class="main">
+      <h1 data-en="My Alerts" data-fr="Mes alertes">My Alerts</h1>
+      <p class="lede" data-en="Save as many searches as you need. A listing matches when every filled-in criterion matches. Alerts are sent only after Advisor Capital authorizes the listing." data-fr="Enregistrez autant de recherches que vous voulez. Une inscription correspond lorsque chaque critère rempli correspond. Les alertes partent seulement après l'autorisation d'Advisor Capital.">Save as many searches as you need. A listing matches when every filled-in criterion matches. Alerts are sent only after Advisor Capital authorizes the listing.</p>
+
+      <div class="split">
+        <div class="stack">
+          <section class="card">
+            <div class="search-top" style="margin-bottom:12px;">
+              <h2 data-en="Saved searches" data-fr="Recherches enregistrées">Saved searches</h2>
+              <button class="btn btn-navy btn-sm" type="button" data-en="New search" data-fr="Nouvelle recherche">New search</button>
+            </div>
+
+            <article class="search-item on">
+              <div class="search-top">
+                <strong>Ontario fee-based</strong>
+                <span class="pill" data-en="Active" data-fr="Active">Active</span>
+              </div>
+              <p class="help">Ontario · Fee-Based · $5M–$20M · For Sale · Instant · English</p>
+              <div class="row-actions" style="margin-top:8px;">
+                <button class="btn btn-ghost btn-sm" type="button" data-en="Pause" data-fr="Suspendre">Pause</button>
+                <button class="btn btn-ghost btn-sm" type="button" data-en="Delete" data-fr="Supprimer">Delete</button>
+              </div>
+            </article>
+
+            <article class="search-item">
+              <div class="search-top">
+                <strong>Prairies insurance</strong>
+                <span class="pill muted" data-en="Paused" data-fr="Suspendue">Paused</span>
+              </div>
+              <p class="help">Alberta, Saskatchewan · Insurance · $20M–$50M · For Sale · Weekly roundup · French</p>
+              <div class="row-actions" style="margin-top:8px;">
+                <button class="btn btn-ghost btn-sm" type="button" data-en="Resume" data-fr="Reprendre">Resume</button>
+                <button class="btn btn-ghost btn-sm" type="button" data-en="Delete" data-fr="Supprimer">Delete</button>
+              </div>
+            </article>
+            <p class="help" data-en="A paused search is kept and receives nothing." data-fr="Une recherche suspendue est conservée et ne reçoit rien.">A paused search is kept and receives nothing.</p>
+          </section>
+
+          <section class="card">
+            <h2 data-en="Edit search" data-fr="Modifier la recherche">Edit search</h2>
+            <p class="sub" data-en="Leave a field empty to mean any." data-fr="Laissez un champ vide pour signifier tous.">Leave a field empty to mean any.</p>
+            <div class="form-grid">
+              <div class="field" style="grid-column:1/-1;">
+                <label data-en="Search name" data-fr="Nom de la recherche">Search name</label>
+                <input value="Ontario fee-based">
+              </div>
+              <div class="field">
+                <label data-en="Province" data-fr="Province">Province</label>
+                <select><option>Ontario</option><option>Alberta</option><option>British Columbia</option><option>Quebec</option></select>
+              </div>
+              <div class="field">
+                <label data-en="Practice type" data-fr="Type de clientèle">Practice type</label>
+                <select><option>Fee-Based</option><option>Insurance</option><option>Mixed</option><option value="">Any</option></select>
+              </div>
+              <div class="field">
+                <label data-en="AUM range" data-fr="Tranche d'ASG">AUM range</label>
+                <select>
+                  <option>$5M–$20M</option>
+                  <option>Under $5M</option>
+                  <option>$20M–$50M</option>
+                  <option>$50M+</option>
+                </select>
+              </div>
+              <div class="field">
+                <label data-en="Deal type" data-fr="Type de transaction">Deal type</label>
+                <select>
+                  <option>For Sale</option>
+                  <option>Partial Sale</option>
+                  <option>Seeking to Acquire</option>
+                </select>
+              </div>
+              <div class="field">
+                <label data-en="VTB required" data-fr="VTB requis">VTB required</label>
+                <select><option data-en="Any" data-fr="Tous">Any</option><option data-en="Yes" data-fr="Oui">Yes</option></select>
+              </div>
+              <div class="field">
+                <label data-en="Financing required" data-fr="Financement requis">Financement requis</label>
+                <select><option data-en="Any" data-fr="Tous">Any</option><option data-en="Yes" data-fr="Oui">Yes</option></select>
+              </div>
+              <div class="field">
+                <label data-en="Frequency" data-fr="Fréquence">Frequency</label>
+                <select><option>Instant</option><option>Weekly roundup</option></select>
+              </div>
+              <div class="field">
+                <label data-en="Language" data-fr="Langue">Language</label>
+                <select><option>English</option><option>Français</option></select>
+              </div>
+            </div>
+            <div class="row-actions" style="margin-top:16px;">
+              <button class="btn btn-gold" type="button" data-en="Save this search" data-fr="Enregistrer cette recherche">Save this search</button>
+              <button class="btn btn-ghost" type="button" data-en="Cancel" data-fr="Annuler">Cancel</button>
+            </div>
+          </section>
+        </div>
+
+        <aside class="stack">
+          <section class="card">
+            <h2 data-en="This search" data-fr="Cette recherche">This search</h2>
+            <div class="check"><span data-en="Provinces" data-fr="Provinces">Provinces</span><strong>Ontario</strong></div>
+            <div class="check"><span data-en="Practice type" data-fr="Type de clientèle">Practice type</span><strong>Fee-Based</strong></div>
+            <div class="check"><span data-en="AUM range" data-fr="Tranche d'ASG">AUM range</span><strong>$5M–$20M</strong></div>
+            <div class="check"><span data-en="Deal type" data-fr="Type de transaction">Deal type</span><strong>For Sale</strong></div>
+            <div class="check"><span data-en="VTB required" data-fr="VTB requis">VTB required</span><strong data-en="Any" data-fr="Tous">Any</strong></div>
+            <div class="check"><span data-en="Financing required" data-fr="Financement requis">Financement requis</span><strong data-en="Any" data-fr="Tous">Any</strong></div>
+            <div class="check"><span data-en="Frequency" data-fr="Fréquence">Frequency</span><strong data-en="Instant" data-fr="Instantanée">Instant</strong></div>
+            <div class="check"><span data-en="Language" data-fr="Langue">Language</span><strong>English</strong></div>
+          </section>
+          <div class="note" data-en="Every listing is reviewed and authorized by Advisor Capital before any alert is sent. No number of alerts is guaranteed." data-fr="Chaque inscription est examinée et autorisée par Advisor Capital avant l'envoi de toute alerte. Aucun nombre d'alertes n'est garanti.">Every listing is reviewed and authorized by Advisor Capital before any alert is sent. No number of alerts is guaranteed.</div>
+        </aside>
+      </div>
+    </main>
+  </div>
+
+  <footer class="site-footer">
+    <div class="site-footer__contact">
+      <div class="site-footer__brand">
+        <img src="https://www.advisorcapital.ca/wp-content/uploads/2026/06/icon_gold_optimized.svg" alt="Advisor Capital Logo" width="36">
+        <div>
+          <div class="site-footer__wordmark">Advisor<span>Capital</span></div>
+          <div class="site-footer__tagline">ACQUISITION &amp; SUCCESSION PLATFORM · CANADA</div>
+        </div>
+      </div>
+      <div class="site-footer__links">
+        <a href="mailto:info@advisorcapital.ca">info@advisorcapital.ca</a>
+        <a href="https://advisorcapital.ca" target="_blank" rel="noopener noreferrer">AdvisorCapital.ca</a>
+      </div>
+    </div>
+    <p class="site-footer__disclosure">
+      <strong>Regulatory Disclosure:</strong> Advisor Capital Inc. is an independent technology platform facilitating introductions between financial professionals. Advisor Capital is NOT a registered lender, financial advisor, investment dealer, or mortgage broker, and is not supervised by the Autorité des marchés financiers (AMF) or CIRO in connection with platform activities. This preliminary report is generated for informational purposes only and does not constitute a formal appraisal, legal advice, or financial planning opinion.
+    </p>
+    <p class="site-footer__copyright">© 2026 Advisor Capital Inc. All rights reserved.</p>
+  </footer>
+  <script src="lang.js"></script>
+</body>
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Advisor Capital — Authorize alert</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Styling to ensure nav bar background matches header and footer */
+    .side {
+      background-color: #0b132b !important;
+      color: #ffffff;
+    }
+    .side .kicker {
+      color: #D4A84A;
+    }
+    .side a {
+      color: #ffffff;
+      opacity: 0.85;
+    }
+    .side a:hover, .side a.on {
+      color: #D4A84A;
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+  <div class="draft">Draft for confirmation · One authorization · One email per Premium member</div>
+  
+  <header class="top" style="background-color: #0b132b; border-bottom: 3px solid #D4A84A; padding: 24px 32px; display: flex; align-items: center; justify-content: space-between; width: 100%; box-sizing: border-box;">
+    <!-- BRAND HEADER BAR -->
+    <div style="display: flex; align-items: center; gap: 12px;">
+      <img src="https://www.advisorcapital.ca/wp-content/uploads/2026/06/icon_gold_optimized.svg" alt="Advisor Capital Logo" width="36" style="display: block; width: 36px; max-width: 36px; height: auto;">
+      <div>
+        <div style="font-size: 35px; font-weight: 700; letter-spacing: 1px; color: #ffffff; font-family: 'Libre Baskerville', Georgia, serif; line-height: 1;">
+          Advisor<span style="color:#D4A84A;">Capital</span>
+        </div>
+        <div style="color: #ffffff; font-size: 9px; font-weight: normal; letter-spacing: 0.09rem; text-transform: uppercase; margin-top: 10px; font-family: 'Plus Jakarta Sans', Arial, sans-serif; line-height: 1;">
+          ACQUISITION &amp; SUCCESSION PLATFORM · CANADA
+        </div>
+      </div>
+    </div>
+    <div class="top-right" style="display: flex; align-items: center;">
+      <span class="avatar">AD</span>
+    </div>
+  </header>
+
+  <div class="shell">
+    <aside class="side">
+      <div class="kicker">Admin</div>
+      <a href="06-listing-review.html">Listing review</a>
+      <a href="07-authorize-alert.html" class="on">Authorize alert</a>
+    </aside>
+    <main class="main">
+      <h1>Authorize alert</h1>
+      <p class="lede">Authorizing LST-2026-0142 emails the six matched Premium members and records who authorized it and when. A member with two matching searches still receives one email.</p>
+
+      <div class="grid-3" style="margin-bottom:16px;">
+        <div class="stat"><span class="meta-label">Premium matches</span><b>6</b><span class="help">Active searches only</span></div>
+        <div class="stat"><span class="meta-label">Skipped</span><b>4</b><span class="help">Free, paused, or unsubscribed</span></div>
+        <div class="stat"><span class="meta-label">Public release</span><b>19 Oct</b><span class="help">48 hours after authorization</span></div>
+      </div>
+
+      <div class="split">
+        <section class="card">
+          <div class="search-top" style="margin-bottom:10px;">
+            <h2>Email preview</h2>
+            <div class="langs light">
+              <button type="button" class="on" id="show-en">EN</button>
+              <button type="button" id="show-fr">FR</button>
+            </div>
+          </div>
+
+          <article class="email" id="mail-en">
+            <div class="eh">
+              <div class="meta-label" style="color:#d5deea;">Subject</div>
+              Verified match: Fee-Based practice in Toronto, Ontario
+            </div>
+            <div class="eb">
+              <p>Hi Alex,</p>
+              <p>A practice matching your saved search “Ontario fee-based” has been verified by our team and authorized for release.</p>
+              <p><strong>Fee-based practice</strong></p>
+              <div class="facts">AUM: CAD $18M · Revenue: CAD $185,000 · Households: 140 · Recurring: 78%<br>Structure: Full · VTB: Yes · Financing: No</div>
+              <p><a class="btn btn-gold btn-sm" href="05-opportunity-detail.html">Request an Introduction</a></p>
+              <p>As a Premium member you are seeing this ahead of public release. All introductions are NDA-protected.</p>
+              <p class="help">Manage alerts · Unsubscribe</p>
+              <p class="help">Advisor Capital is a technology platform that facilitates introductions. It does not provide financial, investment, legal or tax advice, and does not lend money.</p>
+            </div>
+          </article>
+
+          <article class="email" id="mail-fr" hidden>
+            <div class="eh">
+              <div class="meta-label" style="color:#d5deea;">Objet</div>
+              Correspondance vérifiée : clientèle Honoraires à Toronto, Ontario
+            </div>
+            <div class="eb">
+              <p>Bonjour Alex,</p>
+              <p>Une clientèle correspondant à votre recherche « Ontario fee-based » a été vérifiée par notre équipe et autorisée pour diffusion.</p>
+              <p><strong>Clientèle à honoraires</strong></p>
+              <div class="facts">ASG : 18 M$ CA · Revenus : 185 000 $ CA · Ménages : 140 · Récurrent : 78 %<br>Structure : Complète · VTB : Oui · Financement : Non</div>
+              <p><a class="btn btn-gold btn-sm" href="05-opportunity-detail.html">Demander une introduction</a></p>
+              <p>À titre de membre Premium, vous la voyez avant sa diffusion publique. Toutes les introductions sont protégées par une entente de confidentialité.</p>
+              <p class="help">Gérer mes alertes · Me désabonner</p>
+              <p class="help">Advisor Capital est une plateforme technologique qui facilite les introductions. Elle ne fournit aucun conseil financier, en placement, juridique ou fiscal, et ne prête pas d'argent.</p>
+            </div>
+          </article>
+        </section>
+
+        <aside class="stack">
+          <section class="card">
+            <h2>This authorization</h2>
+            <div class="check"><span>Listing</span><strong>LST-2026-0142</strong></div>
+            <div class="check"><span>Action</span><strong>Authorize for communication</strong></div>
+            <div class="check"><span>Recorded as</span><strong>Name, date, and time</strong></div>
+            <div class="check"><span>Already sent</span><strong>No</strong></div>
+            <p class="help">Hold keeps the listing private and sends nothing. Authorizing later still sends once.</p>
+            <div class="row-actions">
+              <button class="btn btn-gold" type="button">Authorize and send</button>
+              <button class="btn btn-ghost" type="button">Hold</button>
+            </div>
+          </section>
+          <div class="note">The weekly roundup is separate. It runs Mondays at 8:00 America/Toronto and includes listings authorized in the past 7 days. If there are none, nothing is sent.</div>
+        </aside>
+      </div>
+    </main>
+  </div>
+
+  <footer class="site-footer">
+    <div class="site-footer__contact">
+      <div class="site-footer__brand">
+        <img src="https://www.advisorcapital.ca/wp-content/uploads/2026/06/icon_gold_optimized.svg" alt="Advisor Capital Logo" width="36">
+        <div>
+          <div class="site-footer__wordmark">Advisor<span>Capital</span></div>
+          <div class="site-footer__tagline">ACQUISITION &amp; SUCCESSION PLATFORM · CANADA</div>
+        </div>
+      </div>
+      <div class="site-footer__links">
+        <a href="mailto:info@advisorcapital.ca">info@advisorcapital.ca</a>
+        <a href="https://advisorcapital.ca" target="_blank" rel="noopener noreferrer">AdvisorCapital.ca</a>
+      </div>
+    </div>
+    <p class="site-footer__disclosure">
+      <strong>Regulatory Disclosure:</strong> Advisor Capital Inc. is an independent technology platform facilitating introductions between financial professionals. Advisor Capital is NOT a registered lender, financial advisor, investment dealer, or mortgage broker, and is not supervised by the Autorité des marchés financiers (AMF) or CIRO in connection with platform activities. This preliminary report is generated for informational purposes only and does not constitute a formal appraisal, legal advice, or financial planning opinion.
+    </p>
+    <p class="site-footer__copyright">© 2026 Advisor Capital Inc. All rights reserved.</p>
+  </footer>
+
+  <script>
+    var enBtn = document.getElementById("show-en");
+    var frBtn = document.getElementById("show-fr");
+    function show(which) {
+      document.getElementById("mail-en").hidden = which !== "en";
+      document.getElementById("mail-fr").hidden = which !== "fr";
+      enBtn.classList.toggle("on", which === "en");
+      frBtn.classList.toggle("on", which === "fr");
+    }
+    enBtn.addEventListener("click", function () { show("en"); });
+    frBtn.addEventListener("click", function () { show("fr"); });
+  </script>
+  <script src="lang.js"></script>
+</body>
+</html>

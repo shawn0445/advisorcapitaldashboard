@@ -24,6 +24,49 @@
       color: #D4A84A;
       opacity: 1;
     }
+
+    /* Modal / Mock Data Panel Styling enhancements */
+    .mock-data-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+      margin-top: 16px;
+    }
+    .mock-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+      padding: 14px 16px;
+    }
+    .mock-card .field-id {
+      font-size: 11px;
+      font-weight: 700;
+      color: #64748b;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .mock-card .field-label {
+      font-size: 13px;
+      font-weight: 600;
+      color: #0b132b;
+      margin-top: 2px;
+    }
+    .mock-card .field-value {
+      font-size: 14px;
+      color: #334155;
+      margin-top: 6px;
+      word-break: break-word;
+    }
+    .badge-tag {
+      display: inline-block;
+      background: #e2e8f0;
+      color: #1e293b;
+      font-size: 12px;
+      padding: 2px 8px;
+      border-radius: 4px;
+      margin-right: 4px;
+      margin-bottom: 4px;
+    }
   </style>
 </head>
 <body>
@@ -119,6 +162,100 @@
           <div><span>Structure / VTB / financing</span><strong>Full · VTB yes · Financing no</strong></div>
           <div><span>If authorized</span><strong>Public 48 hours later</strong></div>
         </div>
+
+        <!-- SELLER REGISTRATION FIELDS MOCK DATA INTEGRATION -->
+        <div style="margin-top: 24px; border-top: 1px solid #e2e8f0; padding-top: 20px;">
+          <h3 style="font-size: 16px; margin-bottom: 4px; color: #0b132b;">Seller Registration & Profile Information (Mock Data)</h3>
+          <p class="sub" style="margin-bottom: 12px;">Reviewing complete seller submission parameters mapped from registration schema fields SEL-01 through SEL-15.</p>
+          
+          <div class="mock-data-grid">
+            <div class="mock-card">
+              <div class="field-id">SEL-01 · Account</div>
+              <div class="field-label">Full Name</div>
+              <div class="field-value">Alexander Vance</div>
+            </div>
+            <div class="mock-card">
+              <div class="field-id">SEL-02 · Account</div>
+              <div class="field-label">Email Address</div>
+              <div class="field-value">alexander.vance@vancewealth.ca</div>
+            </div>
+            <div class="mock-card">
+              <div class="field-id">SEL-03 · Account</div>
+              <div class="field-label">Phone Number</div>
+              <div class="field-value">+1 (416) 555-0198</div>
+            </div>
+            <div class="mock-card">
+              <div class="field-id">SEL-04 · Professional</div>
+              <div class="field-label">Province(s) Licensed</div>
+              <div class="field-value">
+                <span class="badge-tag">Ontario (ON)</span>
+                <span class="badge-tag">British Columbia (BC)</span>
+              </div>
+            </div>
+            <div class="mock-card">
+              <div class="field-id">SEL-05 · Professional</div>
+              <div class="field-label">Professional Designation / Licence</div>
+              <div class="field-value">
+                <span class="badge-tag">CFP</span>
+                <span class="badge-tag">CIRO registration</span>
+              </div>
+            </div>
+            <div class="mock-card">
+              <div class="field-id">SEL-06 · Practice</div>
+              <div class="field-label">Practice Type</div>
+              <div class="field-value">
+                <span class="badge-tag">Financial planning</span>
+                <span class="badge-tag">Investment advisory</span>
+              </div>
+            </div>
+            <div class="mock-card">
+              <div class="field-id">SEL-07 · Practice</div>
+              <div class="field-label">Practice Province</div>
+              <div class="field-value">Ontario (ON)</div>
+            </div>
+            <div class="mock-card">
+              <div class="field-id">SEL-08 · Practice</div>
+              <div class="field-label">Practice City / Region</div>
+              <div class="field-value">Toronto</div>
+            </div>
+            <div class="mock-card">
+              <div class="field-id">SEL-09 · Practice</div>
+              <div class="field-label">Assets Under Management (CAD)</div>
+              <div class="field-value">$35,000,000 CAD</div>
+            </div>
+            <div class="mock-card">
+              <div class="field-id">SEL-10 · Valuation</div>
+              <div class="field-label">Indicative Asking Price (CAD)</div>
+              <div class="field-value">$750,000 CAD</div>
+            </div>
+            <div class="mock-card">
+              <div class="field-id">SEL-11 · Timeline</div>
+              <div class="field-label">Expected Sale Timeframe</div>
+              <div class="field-value">6-12 months</div>
+            </div>
+            <div class="mock-card">
+              <div class="field-id">SEL-12 · Transition</div>
+              <div class="field-label">Transition Support Offered</div>
+              <div class="field-value">6 months</div>
+            </div>
+            <div class="mock-card">
+              <div class="field-id">SEL-13 · Practice</div>
+              <div class="field-label">Approximate Client Count</div>
+              <div class="field-value">250 clients</div>
+            </div>
+            <div class="mock-card">
+              <div class="field-id">SEL-14 · Practice</div>
+              <div class="field-label">Annual Recurring Revenue (CAD)</div>
+              <div class="field-value">$500,000 CAD</div>
+            </div>
+            <div class="mock-card" style="grid-column: 1 / -1;">
+              <div class="field-id">SEL-15 · Preferences</div>
+              <div class="field-label">Buyer Requirements or Preferences</div>
+              <div class="field-value">Looking for a fee-for-service accredited buyer willing to retain existing staff and provide seamless transition for long-term high-net-worth clients.</div>
+            </div>
+          </div>
+        </div>
+
         <div class="row-actions" style="margin-top:16px;">
           <a class="btn btn-gold" href="07-authorize-alert.html">Open alert preview</a>
           <button class="btn btn-ghost" type="button">Hold</button>

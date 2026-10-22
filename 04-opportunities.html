@@ -24,6 +24,30 @@
       color: #D4A84A;
       opacity: 1;
     }
+
+    /* Additional layout tweaks for listing metrics */
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 12px;
+      margin: 12px 0;
+      background: #f8fafc;
+      padding: 12px;
+      border-radius: 6px;
+      border: 1px solid #e2e8f0;
+    }
+    .metrics-grid div span {
+      display: block;
+      font-size: 11px;
+      color: #64748b;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+    .metrics-grid div strong {
+      font-size: 14px;
+      color: #0b132b;
+    }
   </style>
 </head>
 <body>
@@ -62,49 +86,126 @@
 
       <div class="filters">
         <input data-ph-en="Search by province or practice type" data-ph-fr="Recherche par province ou type de clientèle" placeholder="Search by province or practice type">
-        <select><option data-en="All provinces" data-fr="Toutes les provinces">All provinces</option><option>Ontario</option><option>Alberta</option></select>
-        <select><option data-en="All practice types" data-fr="Tous les types">All practice types</option><option>Fee-Based</option><option>Insurance</option><option>Mixed</option></select>
-        <select><option data-en="Any AUM range" data-fr="Toute tranche d'ASG">Any AUM range</option><option>Under $5M</option><option>$5M–$20M</option><option>$20M–$50M</option><option>$50M+</option></select>
-        <select><option data-en="Newest authorized" data-fr="Plus récemment autorisées">Newest authorized</option><option data-en="Province" data-fr="Province">Province</option></select>
+        <select>
+          <option data-en="All provinces" data-fr="Toutes les provinces">All provinces</option>
+          <option>Ontario</option>
+          <option>Alberta</option>
+          <option>Nova Scotia</option>
+        </select>
+        <select>
+          <option data-en="All practice types" data-fr="Tous les types">All practice types</option>
+          <option>Financial planning</option>
+          <option>Investment advisory</option>
+          <option>Insurance</option>
+        </select>
+        <select>
+          <option data-en="Any AUM range" data-fr="Toute tranche d'ASG">Any AUM range</option>
+          <option>Under $5M</option>
+          <option>$5M–$20M</option>
+          <option>$20M–$50M</option>
+          <option>$50M+</option>
+        </select>
+        <select>
+          <option data-en="Newest authorized" data-fr="Plus récemment autorisées">Newest authorized</option>
+          <option data-en="Province" data-fr="Province">Province</option>
+        </select>
       </div>
 
       <section class="card">
-        <article class="listing">
+        <!-- LISTING 1: MATCHED TO ALEXANDER VANCE SCHEMA DATA (SEL-01 TO SEL-15) -->
+        <article class="listing" style="border-bottom: 1px solid #e2e8f0; padding-bottom: 20px; margin-bottom: 20px;">
           <div>
             <span class="pill gold" data-en="Before public release" data-fr="Avant la diffusion publique">Before public release</span>
-            <h2 style="margin-top:8px;" data-en="Fee-based practice" data-fr="Clientèle à honoraires">Fee-based practice</h2>
+            <h2 style="margin-top:8px;" data-en="Fee-based & Financial Planning Practice" data-fr="Pratique à honoraires et planification financière">Fee-based & Financial Planning Practice</h2>
             <div class="chips">
-              <span class="pill navy">Ontario</span>
+              <span class="pill navy">Toronto, ON (SEL-07 / SEL-08)</span>
               <span class="pill muted" data-en="For sale" data-fr="À vendre">For sale</span>
+              <span class="pill muted">CFP · CIRO (SEL-05)</span>
             </div>
-            <p class="help" data-en="Matches your search “Ontario fee-based”." data-fr="Correspond à votre recherche « Ontario fee-based ».">Matches your search “Ontario fee-based”.</p>
+            <p class="help" style="margin-top: 6px;" data-en="Matches your search “Ontario fee-based”." data-fr="Correspond à votre recherche « Ontario fee-based ».">Matches your search “Ontario fee-based”.</p>
           </div>
-          <div class="metrics">
-            <div><b>AUM</b>CAD $18M</div>
-            <div><b data-en="Revenue" data-fr="Revenus">Revenue</b>CAD $185,000</div>
-            <div><b data-en="Households" data-fr="Ménages">Households</b>140</div>
-            <div><b data-en="Recurring" data-fr="Récurrent">Recurring</b>78%</div>
+
+          <div class="metrics-grid">
+            <div>
+              <span data-en="Assets (AUM)" data-fr="Actifs (ASG)">Assets (AUM)</span>
+              <strong>$35,000,000 CAD</strong>
+            </div>
+            <div>
+              <span data-en="Recurring Revenue" data-fr="Revenu récurrent">Recurring Revenue</span>
+              <strong>$500,000 CAD</strong>
+            </div>
+            <div>
+              <span data-en="Asking Price" data-fr="Prix demandé">Asking Price</span>
+              <strong>$750,000 CAD</strong>
+            </div>
+            <div>
+              <span data-en="Clients" data-fr="Clients">Clients</span>
+              <strong>250</strong>
+            </div>
+            <div>
+              <span data-en="Timeframe" data-fr="Échéancier">Timeframe</span>
+              <strong data-en="6-12 months" data-fr="6 à 12 mois">6-12 months</strong>
+            </div>
+            <div>
+              <span data-en="Transition" data-fr="Transition">Transition</span>
+              <strong data-en="6 months" data-fr="6 mois">6 months</strong>
+            </div>
           </div>
-          <a class="btn btn-gold" href="05-opportunity-detail.html" data-en="View opportunity" data-fr="Voir l'occasion">View opportunity</a>
+
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
+            <p class="sub" style="margin: 0; font-size: 13px; max-width: 70%;" data-en="Preferences: Seeking accredited buyer to retain staff & maintain high-net-worth service level." data-fr="Préférences : Recherche un acheteur accrédité pour conserver le personnel et maintenir le niveau de service.">
+              Preferences: Seeking accredited buyer to retain staff & maintain high-net-worth service level.
+            </p>
+            <a class="btn btn-gold" href="05-opportunity-detail.html" data-en="I'm Interested" data-fr="Ça m'intéresse">I'm Interested</a>
+          </div>
         </article>
 
+        <!-- LISTING 2: SAMPLE MIXED PRACTICE LISTING -->
         <article class="listing">
           <div>
             <span class="pill muted" data-en="Public" data-fr="Publique">Public</span>
-            <h2 style="margin-top:8px;" data-en="Mixed practice" data-fr="Clientèle mixte">Mixed practice</h2>
+            <h2 style="margin-top:8px;" data-en="Mixed Advisory & Insurance Practice" data-fr="Pratique mixte de conseil et d'assurance">Mixed Advisory & Insurance Practice</h2>
             <div class="chips">
-              <span class="pill navy">Nova Scotia</span>
+              <span class="pill navy">Halifax, NS</span>
               <span class="pill muted" data-en="For sale" data-fr="À vendre">For sale</span>
+              <span class="pill muted">Life & Mutual Funds</span>
             </div>
-            <p class="help" data-en="Visible to free and logged-out visitors." data-fr="Visible aux comptes gratuits et aux visiteurs non connectés.">Visible to free and logged-out visitors.</p>
+            <p class="help" style="margin-top: 6px;" data-en="Visible to free and logged-out visitors." data-fr="Visible aux comptes gratuits et aux visiteurs non connectés.">Visible to free and logged-out visitors.</p>
           </div>
-          <div class="metrics">
-            <div><b>AUM</b>CAD $4.2M</div>
-            <div><b data-en="Revenue" data-fr="Revenus">Revenue</b>CAD $310,000</div>
-            <div><b data-en="Households" data-fr="Ménages">Households</b>80</div>
-            <div><b data-en="Recurring" data-fr="Récurrent">Recurring</b>71%</div>
+
+          <div class="metrics-grid">
+            <div>
+              <span data-en="Assets (AUM)" data-fr="Actifs (ASG)">Assets (AUM)</span>
+              <strong>$4,200,000 CAD</strong>
+            </div>
+            <div>
+              <span data-en="Recurring Revenue" data-fr="Revenu récurrent">Recurring Revenue</span>
+              <strong>$310,000 CAD</strong>
+            </div>
+            <div>
+              <span data-en="Asking Price" data-fr="Prix demandé">Asking Price</span>
+              <strong>$450,000 CAD</strong>
+            </div>
+            <div>
+              <span data-en="Clients" data-fr="Clients">Clients</span>
+              <strong>80</strong>
+            </div>
+            <div>
+              <span data-en="Timeframe" data-fr="Échéancier">Timeframe</span>
+              <strong data-en="12-24 months" data-fr="12 à 24 mois">12-24 months</strong>
+            </div>
+            <div>
+              <span data-en="Transition" data-fr="Transition">Transition</span>
+              <strong data-en="3 months" data-fr="3 mois">3 months</strong>
+            </div>
           </div>
-          <a class="btn btn-ghost" href="05-opportunity-detail.html" data-en="View opportunity" data-fr="Voir l'occasion">View opportunity</a>
+
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
+            <p class="sub" style="margin: 0; font-size: 13px; max-width: 70%;" data-en="Preferences: Flexible deal terms with preference for local East Coast presence." data-fr="Préférences : Conditions flexibles avec préférence pour une présence locale dans l'Est.">
+              Preferences: Flexible deal terms with preference for local East Coast presence.
+            </p>
+            <a class="btn btn-ghost" href="05-opportunity-detail.html" data-en="I'm Interested" data-fr="Ça m'intéresse">I'm Interested</a>
+          </div>
         </article>
       </section>
     </main>

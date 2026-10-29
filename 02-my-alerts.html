@@ -1,340 +1,787 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Advisor Capital — My Alerts</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-  <style>
-    /* Styling to ensure nav bar background matches header and footer */
-    .side {
-      background-color: #0b132b !important;
-      color: #ffffff;
-    }
-    .side .kicker {
-      color: #D4A84A;
-    }
-    .side a {
-      color: #ffffff;
-      opacity: 0.85;
-    }
-    .side a:hover, .side a.on {
-      color: #D4A84A;
-      opacity: 1;
-    }
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Advisor Capital — My Alerts</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      /* Styling to ensure nav bar background matches header and footer */
+      .side {
+        background-color: #0b132b !important;
+        color: #ffffff;
+      }
+      .side .kicker {
+        color: #d4a84a;
+      }
+      .side a {
+        color: #ffffff;
+        opacity: 0.85;
+      }
+      .side a:hover,
+      .side a.on {
+        color: #d4a84a;
+        opacity: 1;
+      }
 
-    /* Section Subheadings inside Card Forms */
-    .form-section-title {
-      grid-column: 1 / -1;
-      font-size: 14px;
-      font-weight: 700;
-      color: #0b132b;
-      margin-top: 16px;
-      margin-bottom: 4px;
-      padding-bottom: 4px;
-      border-bottom: 2px solid #D4A84A;
-    }
-    
-    /* Input multi-select / check grid styling */
-    .checkbox-group {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 6px;
-    }
-    .checkbox-group label {
-      font-size: 13px;
-      font-weight: normal;
-      color: #334155;
-      display: flex;
-      align-items: center;
-      gap: 4px;
-      cursor: pointer;
-    }
+      /* Section Subheadings inside Card Forms */
+      .form-section-title {
+        grid-column: 1 / -1;
+        font-size: 14px;
+        font-weight: 700;
+        color: #0b132b;
+        margin-top: 16px;
+        margin-bottom: 4px;
+        padding-bottom: 4px;
+        border-bottom: 2px solid #d4a84a;
+      }
 
-    .sidebar-section-title {
-      font-size: 13px;
-      font-weight: 700;
-      color: #0b132b;
-      margin-top: 14px;
-      margin-bottom: 6px;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      border-bottom: 1px solid #e2e8f0;
-      padding-bottom: 2px;
-    }
+      /* Input multi-select / check grid styling */
+      .checkbox-group {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 6px;
+      }
+      .checkbox-group label {
+        font-size: 13px;
+        font-weight: normal;
+        color: #334155;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        cursor: pointer;
+      }
 
-    /* Helper text for special field options */
-    .field-hint {
-      font-size: 11px;
-      color: #64748b;
-      margin-top: 4px;
-      display: block;
-    }
-  </style>
-</head>
-<body>
-  <div class="draft" data-en="Draft for confirmation · Premium only · An empty field means any" data-fr="Brouillon pour confirmation · Premium seulement · Un champ vide signifie tous">Draft for confirmation · Premium only · An empty field means any</div>
-  
-  <header class="top" style="background-color: #0b132b; border-bottom: 3px solid #D4A84A; padding: 24px 32px; display: flex; align-items: center; justify-content: space-between; width: 100%; box-sizing: border-box;">
-    <!-- BRAND HEADER BAR -->
-    <div style="display: flex; align-items: center; gap: 12px;">
-      <img src="https://www.advisorcapital.ca/wp-content/uploads/2026/06/icon_gold_optimized.svg" alt="Advisor Capital Logo" width="36" style="display: block; width: 36px; max-width: 36px; height: auto;">
-      <div>
-        <div style="font-size: 35px; font-weight: 700; letter-spacing: 1px; color: #ffffff; font-family: 'Libre Baskerville', Georgia, serif; line-height: 1;">
-          Advisor<span style="color:#D4A84A;">Capital</span>
-        </div>
-        <div style="color: #ffffff; font-size: 9px; font-weight: normal; letter-spacing: 0.09rem; text-transform: uppercase; margin-top: 10px; font-family: 'Plus Jakarta Sans', Arial, sans-serif; line-height: 1;">
-          ACQUISITION &amp; SUCCESSION PLATFORM · CANADA
-        </div>
-      </div>
+      .sidebar-section-title {
+        font-size: 13px;
+        font-weight: 700;
+        color: #0b132b;
+        margin-top: 14px;
+        margin-bottom: 6px;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        border-bottom: 1px solid #e2e8f0;
+        padding-bottom: 2px;
+      }
+
+      /* Helper text for special field options */
+      .field-hint {
+        font-size: 11px;
+        color: #64748b;
+        margin-top: 4px;
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      class="draft"
+      data-en="Draft for confirmation · Premium only · An empty field means any"
+      data-fr="Brouillon pour confirmation · Premium seulement · Un champ vide signifie tous"
+    >
+      Draft for confirmation · Premium only · An empty field means any
     </div>
-    <div class="top-right" style="display: flex; align-items: center;">
-      <span class="avatar">AC</span>
-    </div>
-  </header>
 
-  <div class="shell">
-    <aside class="side">
-      <div class="kicker" data-en="Account" data-fr="Compte">Account</div>
-      <a href="03-dashboard.html" data-en="Dashboard" data-fr="Tableau de bord">Dashboard</a>
-      <a href="02-my-alerts.html" class="on" data-en="My Alerts" data-fr="Mes alertes">My Alerts</a>
-      <a href="04-opportunities.html" data-en="Opportunities" data-fr="Occasions">Opportunities</a>
-      <a href="01-billing.html" data-en="Subscription" data-fr="Abonnement">Subscription</a>
-    </aside>
-    <main class="main">
-      <h1 data-en="My Alerts & Buyer Profile" data-fr="Mes alertes et profil d'acheteur">My Alerts & Buyer Profile</h1>
-      <p class="lede" data-en="Set your acquisition criteria and buyer information below. A listing matches when every filled-in criterion matches. Alerts are sent only after Advisor Capital authorizes the listing." data-fr="Définissez vos critères d'acquisition et vos renseignements d'acheteur ci-dessous. Une inscription correspond lorsque chaque critère rempli correspond. Les alertes partent seulement après l'autorisation d'Advisor Capital.">Set your acquisition criteria and buyer information below. A listing matches when every filled-in criterion matches. Alerts are sent only after Advisor Capital authorizes the listing.</p>
-
-      <div class="split">
-        <div class="stack">
-          <section class="card">
-            <h2 data-en="Edit acquisition preferences & buyer profile" data-fr="Modifier les préférences d'acquisition et le profil">Edit acquisition preferences & buyer profile</h2>
-            <p class="sub" data-en="Leave a field empty to mean any." data-fr="Laissez un champ vide pour signifier tous.">Leave a field empty to mean any.</p>
-            
-            <div class="form-grid">
-              <!-- GENERAL ALERT SETTINGS -->
-              <div class="field" style="grid-column:1/-1;">
-                <label data-en="Preference profile name" data-fr="Nom du profil de préférence">Preference profile name</label>
-                <input value="Ontario Fee-Based Acquisition">
-              </div>
-
-              <!-- SECTION 1: ACCOUNT DETAILS -->
-              <div class="form-section-title" data-en="1. Account Details" data-fr="1. Renseignements du compte">1. Account Details</div>
-              
-              <div class="field">
-                <label data-en="Full name" data-fr="Nom complet">Full name</label>
-                <input type="text" value="Sarah Jenkins">
-              </div>
-              <div class="field">
-                <label data-en="Email address" data-fr="Adresse courriel">Email address</label>
-                <input type="email" value="sarah.jenkins@wealthpartners.ca">
-              </div>
-              <div class="field">
-                <label data-en="Phone number" data-fr="Numéro de téléphone">Phone number</label>
-                <input type="tel" value="+1 (416) 555-0144">
-              </div>
-
-              <!-- SECTION 2: PROFESSIONAL QUALIFICATIONS -->
-              <div class="form-section-title" data-en="2. Professional Qualifications" data-fr="2. Qualifications professionnelles">2. Professional Qualifications</div>
-
-              <div class="field" style="grid-column:1/-1;">
-                <label data-en="Province(s) licensed" data-fr="Province(s) sous permis">Province(s) licensed</label>
-                <div class="checkbox-group">
-                  <label><input type="checkbox" checked> ON</label>
-                  <label><input type="checkbox" checked> BC</label>
-                  <label><input type="checkbox"> AB</label>
-                  <label><input type="checkbox"> QC</label>
-                  <label><input type="checkbox"> NS</label>
-                  <label><input type="checkbox"> MB</label>
-                </div>
-              </div>
-
-              <div class="field" style="grid-column:1/-1;">
-                <label data-en="Professional designation / licence" data-fr="Désignation professionnelle / permis">Professional designation / licence</label>
-                <div class="checkbox-group">
-                  <label><input type="checkbox" checked> CFP</label>
-                  <label><input type="checkbox" checked> CIRO registration</label>
-                  <label><input type="checkbox"> Insurance licence</label>
-                  <label><input type="checkbox"> CFA</label>
-                  <label><input type="checkbox"> Other</label>
-                </div>
-              </div>
-
-              <div class="field" style="grid-column:1/-1;">
-                <label data-en="Practice type sought" data-fr="Type de clientèle recherché">Practice type sought</label>
-                <div class="checkbox-group">
-                  <label><input type="checkbox" checked> Financial planning</label>
-                  <label><input type="checkbox" checked> Investment advisory</label>
-                  <label><input type="checkbox"> Insurance</label>
-                  <label><input type="checkbox"> Other</label>
-                </div>
-              </div>
-
-              <!-- SECTION 3: ACQUISITION TARGETS -->
-              <div class="form-section-title" data-en="3. Acquisition Targets & Criteria" data-fr="3. Cibles d'acquisition et critères">3. Acquisition Targets & Criteria</div>
-
-              <div class="field">
-                <label data-en="Preferred practice province(s)" data-fr="Province(s) de pratique préférée(s)">Preferred practice province(s)</label>
-                <select>
-                  <option selected>Ontario (ON)</option>
-                  <option>British Columbia (BC)</option>
-                  <option>Alberta (AB)</option>
-                  <option>Quebec (QC)</option>
-                  <option value="">Any province</option>
-                </select>
-              </div>
-
-              <div class="field">
-                <label data-en="Preferred city / region" data-fr="Ville / région préférée">Preferred city / region</label>
-                <input type="text" value="Toronto, GTA, Ottawa">
-              </div>
-
-              <div class="field">
-                <label data-en="Target AUM minimum (CAD)" data-fr="ASG cible minimum (CAD)">Target AUM minimum (CAD)</label>
-                <input type="number" value="10000000" placeholder="e.g. 10000000">
-              </div>
-
-              <div class="field">
-                <label data-en="Target AUM maximum (CAD)" data-fr="ASG cible maximum (CAD)">Target AUM maximum (CAD)</label>
-                <input type="number" value="50000000" placeholder="e.g. 50000000">
-              </div>
-
-              <div class="field">
-                <label data-en="Acquisition budget min (CAD)" data-fr="Budget d'acquisition min (CAD)">Acquisition budget min (CAD)</label>
-                <input type="number" value="500000" placeholder="e.g. 500000">
-              </div>
-
-              <div class="field">
-                <label data-en="Acquisition budget max (CAD)" data-fr="Budget d'acquisition max (CAD)">Acquisition budget max (CAD)</label>
-                <input type="number" value="1000000" placeholder="e.g. 1000000">
-              </div>
-
-              <!-- PURCHASE TIMEFRAME DROPDOWN (REQ-1 & REQ-2 INTEGRATED) -->
-              <div class="field" style="grid-column:1/-1;">
-                <label data-en="Purchase timeframe" data-fr="Échéancier d'achat">Purchase timeframe</label>
-                <select>
-                  <option value="anytime" selected data-en="Anytime (Ongoing / No expiry)" data-fr="En tout temps (Continu / Sans expiration)">Anytime (Ongoing / No expiry)</option>
-                  <option value="1w" data-en="1 week" data-fr="1 semaine">1 week</option>
-                  <option value="2w" data-en="2 weeks" data-fr="2 semaines">2 weeks</option>
-                  <option value="3w" data-en="3 weeks" data-fr="3 semaines">3 semaines</option>
-                  <option value="1m" data-en="1 month" data-fr="1 mois">1 month</option>
-                  <option value="2m" data-en="2 months" data-fr="2 mois">2 months</option>
-                  <option value="3m" data-en="3 months" data-fr="3 mois">3 months</option>
-                  <option value="6m" data-en="6 months" data-fr="6 mois">6 months</option>
-                  <option value="1y" data-en="1 year" data-fr="1 an">1 year</option>
-                  <option value="2y" data-en="2 years" data-fr="2 ans">2 years</option>
-                </select>
-                <span class="field-hint" data-en="Selecting “Anytime” keeps your alert profile actively matching indefinitely until modified." data-fr="Sélectionner « En tout temps » conserve votre profil d'alerte actif indéfiniment jusqu'à modification.">Selecting “Anytime” keeps your alert profile actively matching indefinitely until modified.</span>
-              </div>
-
-              <div class="field">
-                <label data-en="Financing status" data-fr="Statut de financement">Financing status</label>
-                <select>
-                  <option selected>Available cash</option>
-                  <option>Pre-approved</option>
-                  <option>Seeking financing</option>
-                  <option>Undecided</option>
-                </select>
-              </div>
-
-              <div class="field">
-                <label data-en="Preferred seller transition support" data-fr="Soutien de transition vendeur préféré">Preferred seller transition support</label>
-                <select>
-                  <option>None</option>
-                  <option>3 months</option>
-                  <option selected>6 months</option>
-                  <option>12 months</option>
-                  <option>Flexible</option>
-                </select>
-              </div>
-
-              <!-- SECTION 4: PREFERENCES & ALERT DELIVERY -->
-              <div class="form-section-title" data-en="4. Additional Preferences & Delivery" data-fr="4. Préférences supplémentaires et livraison">4. Additional Preferences & Delivery</div>
-
-              <div class="field" style="grid-column:1/-1;">
-                <label data-en="Additional acquisition preferences" data-fr="Préférences d'acquisition supplémentaires">Additional acquisition preferences</label>
-                <textarea rows="3" style="width:100%; box-sizing:border-box; border:1px solid #cbd5e1; border-radius:4px; padding:8px; font-family:inherit;">Seeking established fee-for-service client book with dedicated administrative staff open to remaining post-transaction.</textarea>
-              </div>
-
-              <div class="field">
-                <label data-en="Notification frequency" data-fr="Fréquence de notification">Notification frequency</label>
-                <select>
-                  <option selected data-en="Instant" data-fr="Instantanée">Instant</option>
-                  <option data-en="Weekly roundup" data-fr="Résumé hebdomadaire">Weekly roundup</option>
-                </select>
-              </div>
-
-              <div class="field">
-                <label data-en="Alert language" data-fr="Langue d'alerte">Alert language</label>
-                <select>
-                  <option selected>English</option>
-                  <option>Français</option>
-                </select>
-              </div>
-            </div>
-
-            <div class="row-actions" style="margin-top:20px;">
-              <button class="btn btn-gold" type="button" data-en="Save preferences" data-fr="Enregistrer les préférences">Save preferences</button>
-              <button class="btn btn-ghost" type="button" data-en="Cancel" data-fr="Annuler">Cancel</button>
-            </div>
-          </section>
-        </div>
-
-        <aside class="stack">
-          <section class="card">
-            <h2 data-en="Active buyer profile" data-fr="Profil d'acheteur actif">Active buyer profile</h2>
-            
-            <div class="sidebar-section-title" data-en="Account" data-fr="Compte">Account</div>
-            <div class="check"><span data-en="Buyer name" data-fr="Nom de l'acheteur">Buyer name</span><strong>Sarah Jenkins</strong></div>
-            <div class="check"><span data-en="Contact" data-fr="Contact">Contact</span><strong>+1 (416) 555-0144</strong></div>
-
-            <div class="sidebar-section-title" data-en="Professional" data-fr="Professionnel">Professional</div>
-            <div class="check"><span data-en="Licences" data-fr="Permis">Licences</span><strong>ON, BC</strong></div>
-            <div class="check"><span data-en="Designations" data-fr="Titres">Designations</span><strong>CFP, CIRO</strong></div>
-            <div class="check"><span data-en="Type sought" data-fr="Type recherché">Type sought</span><strong data-en="Financial planning" data-fr="Planification">Financial planning</strong></div>
-
-            <div class="sidebar-section-title" data-en="Target Criteria" data-fr="Critères cibles">Target Criteria</div>
-            <div class="check"><span data-en="Province(s)" data-fr="Province(s)">Province(s)</span><strong>Ontario (ON)</strong></div>
-            <div class="check"><span data-en="City / Region" data-fr="Ville / Région">City / Region</span><strong>Toronto, GTA</strong></div>
-            <div class="check"><span data-en="Target AUM" data-fr="ASG cible">Target AUM</span><strong>$10M – $50M CAD</strong></div>
-            <div class="check"><span data-en="Budget range" data-fr="Tranche de budget">Budget range</span><strong>$500K – $1.0M CAD</strong></div>
-            <div class="check"><span data-en="Purchase timeframe" data-fr="Échéancier d'achat">Purchase timeframe</span><strong data-en="Anytime (Ongoing)" data-fr="En tout temps (Continu)">Anytime (Ongoing)</strong></div>
-            <div class="check"><span data-en="Financing" data-fr="Financement">Financing</span><strong data-en="Available cash" data-fr="Comptant disponible">Available cash</strong></div>
-            <div class="check"><span data-en="Transition" data-fr="Transition">Transition</span><strong>6 months</strong></div>
-
-            <div class="sidebar-section-title" data-en="Delivery" data-fr="Livraison">Delivery</div>
-            <div class="check"><span data-en="Frequency" data-fr="Fréquence">Frequency</span><strong data-en="Instant" data-fr="Instantanée">Instant</strong></div>
-            <div class="check"><span data-en="Language" data-fr="Langue">Language</span><strong>English</strong></div>
-          </section>
-
-          <div class="note" data-en="Every listing is reviewed and authorized by Advisor Capital before any alert is sent. No number of alerts is guaranteed." data-fr="Chaque inscription est examinée et autorisée par Advisor Capital avant l'envoi de toute alerte. Aucun nombre d'alertes n'est garanti.">Every listing is reviewed and authorized by Advisor Capital before any alert is sent. No number of alerts is guaranteed.</div>
-        </aside>
-      </div>
-    </main>
-  </div>
-
-  <footer class="site-footer">
-    <div class="site-footer__contact">
-      <div class="site-footer__brand">
-        <img src="https://www.advisorcapital.ca/wp-content/uploads/2026/06/icon_gold_optimized.svg" alt="Advisor Capital Logo" width="36">
+    <header
+      class="top"
+      style="
+        background-color: #0b132b;
+        border-bottom: 3px solid #d4a84a;
+        padding: 24px 32px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        box-sizing: border-box;
+      "
+    >
+      <!-- BRAND HEADER BAR -->
+      <div style="display: flex; align-items: center; gap: 12px">
+        <img
+          src="https://www.advisorcapital.ca/wp-content/uploads/2026/06/icon_gold_optimized.svg"
+          alt="Advisor Capital Logo"
+          width="36"
+          style="display: block; width: 36px; max-width: 36px; height: auto"
+        />
         <div>
-          <div class="site-footer__wordmark">Advisor<span>Capital</span></div>
-          <div class="site-footer__tagline">ACQUISITION &amp; SUCCESSION PLATFORM · CANADA</div>
+          <div
+            style="
+              font-size: 35px;
+              font-weight: 700;
+              letter-spacing: 1px;
+              color: #ffffff;
+              font-family: &quot;Libre Baskerville&quot;, Georgia, serif;
+              line-height: 1;
+            "
+          >
+            Advisor<span style="color: #d4a84a">Capital</span>
+          </div>
+          <div
+            style="
+              color: #ffffff;
+              font-size: 9px;
+              font-weight: normal;
+              letter-spacing: 0.09rem;
+              text-transform: uppercase;
+              margin-top: 10px;
+              font-family: &quot;Plus Jakarta Sans&quot;, Arial, sans-serif;
+              line-height: 1;
+            "
+          >
+            ACQUISITION &amp; SUCCESSION PLATFORM · CANADA
+          </div>
         </div>
       </div>
-      <div class="site-footer__links">
-        <a href="mailto:info@advisorcapital.ca">info@advisorcapital.ca</a>
-        <a href="https://advisorcapital.ca" target="_blank" rel="noopener noreferrer">AdvisorCapital.ca</a>
+      <div class="top-right" style="display: flex; align-items: center">
+        <span class="avatar">AC</span>
       </div>
+    </header>
+
+    <div class="shell">
+      <aside class="side">
+        <div class="kicker" data-en="Account" data-fr="Compte">Account</div>
+        <a
+          href="03-dashboard.html"
+          data-en="Dashboard"
+          data-fr="Tableau de bord"
+          >Dashboard</a
+        >
+        <a
+          href="02-my-alerts.html"
+          class="on"
+          data-en="My Alerts"
+          data-fr="Mes alertes"
+          >My Alerts</a
+        >
+        <a
+          href="04-opportunities.html"
+          data-en="Opportunities"
+          data-fr="Occasions"
+          >Opportunities</a
+        >
+        <a href="01-billing.html" data-en="Subscription" data-fr="Abonnement"
+          >Subscription</a
+        >
+      </aside>
+      <main class="main">
+        <h1
+          data-en="My Alerts & Buyer Profile"
+          data-fr="Mes alertes et profil d'acheteur"
+        >
+          My Alerts & Buyer Profile
+        </h1>
+        <p
+          class="lede"
+          data-en="Set your acquisition criteria and buyer information below. A listing matches when every filled-in criterion matches. Alerts are sent only after Advisor Capital authorizes the listing."
+          data-fr="Définissez vos critères d'acquisition et vos renseignements d'acheteur ci-dessous. Une inscription correspond lorsque chaque critère rempli correspond. Les alertes partent seulement après l'autorisation d'Advisor Capital."
+        >
+          Set your acquisition criteria and buyer information below. A listing
+          matches when every filled-in criterion matches. Alerts are sent only
+          after Advisor Capital authorizes the listing.
+        </p>
+
+        <div class="split">
+          <div class="stack">
+            <section class="card">
+              <h2
+                data-en="Edit acquisition preferences & buyer profile"
+                data-fr="Modifier les préférences d'acquisition et le profil"
+              >
+                Edit acquisition preferences & buyer profile
+              </h2>
+              <p
+                class="sub"
+                data-en="Leave a field empty to mean any."
+                data-fr="Laissez un champ vide pour signifier tous."
+              >
+                Leave a field empty to mean any.
+              </p>
+
+              <div class="form-grid">
+                <!-- GENERAL ALERT SETTINGS -->
+                <div class="field" style="grid-column: 1/-1">
+                  <label
+                    data-en="Preference profile name"
+                    data-fr="Nom du profil de préférence"
+                    >Preference profile name</label
+                  >
+                  <input value="Ontario Fee-Based Acquisition" />
+                </div>
+
+                <!-- SECTION 1: ACCOUNT DETAILS -->
+                <div
+                  class="form-section-title"
+                  data-en="1. Account Details"
+                  data-fr="1. Renseignements du compte"
+                >
+                  1. Account Details
+                </div>
+
+                <div class="field">
+                  <label data-en="Full name" data-fr="Nom complet"
+                    >Full name</label
+                  >
+                  <input type="text" value="Sarah Jenkins" />
+                </div>
+                <div class="field">
+                  <label data-en="Email address" data-fr="Adresse courriel"
+                    >Email address</label
+                  >
+                  <input type="email" value="sarah.jenkins@wealthpartners.ca" />
+                </div>
+                <div class="field">
+                  <label data-en="Phone number" data-fr="Numéro de téléphone"
+                    >Phone number</label
+                  >
+                  <input type="tel" value="+1 (416) 555-0144" />
+                </div>
+
+                <!-- SECTION 2: PROFESSIONAL QUALIFICATIONS -->
+                <div
+                  class="form-section-title"
+                  data-en="2. Professional Qualifications"
+                  data-fr="2. Qualifications professionnelles"
+                >
+                  2. Professional Qualifications
+                </div>
+
+                <div class="field" style="grid-column: 1/-1">
+                  <label
+                    data-en="Province(s) licensed"
+                    data-fr="Province(s) sous permis"
+                    >Province(s) licensed</label
+                  >
+                  <div class="checkbox-group">
+                    <label><input type="checkbox" checked /> ON</label>
+                    <label><input type="checkbox" checked /> BC</label>
+                    <label><input type="checkbox" /> AB</label>
+                    <label><input type="checkbox" /> QC</label>
+                    <label><input type="checkbox" /> NS</label>
+                    <label><input type="checkbox" /> NB</label>
+                    <label><input type="checkbox" /> MB</label>
+                    <label><input type="checkbox" /> PE</label>
+                    <label><input type="checkbox" /> SK</label>
+                    <label><input type="checkbox" /> NL</label>
+                    <label><input type="checkbox" /> YT</label>
+                    <label><input type="checkbox" /> NT</label>
+                    <label><input type="checkbox" /> NU</label>
+                  </div>
+                </div>
+
+                <div class="field" style="grid-column: 1/-1">
+                  <label
+                    data-en="Professional designation / licence"
+                    data-fr="Désignation professionnelle / permis"
+                    >Professional designation / licence</label
+                  >
+                  <div class="checkbox-group" style="align-items: center">
+                    <label><input type="checkbox" checked /> CFP</label>
+                    <label
+                      ><input type="checkbox" checked /> CIRO
+                      registration</label
+                    >
+                    <label><input type="checkbox" /> Insurance licence</label>
+                    <label><input type="checkbox" /> CFA</label>
+                    <label style="gap: 6px">
+                      <input
+                        type="checkbox"
+                        id="otherDesignationToggle"
+                        onchange="
+                          document.getElementById(
+                            'otherDesignationInput',
+                          ).style.display = this.checked
+                            ? 'inline-block'
+                            : 'none'
+                        "
+                      />
+                      Other
+                    </label>
+                    <input
+                      type="text"
+                      id="otherDesignationInput"
+                      placeholder="Please specify designation(s)..."
+                      style="
+                        display: none;
+                        height: 32px;
+                        padding: 4px 10px;
+                        font-size: 13px;
+                        border: 1px solid #cbd5e1;
+                        border-radius: 4px;
+                        min-width: 220px;
+                        flex-grow: 1;
+                      "
+                    />
+                  </div>
+                </div>
+
+                <div class="field" style="grid-column: 1/-1">
+                  <label
+                    data-en="Practice type sought"
+                    data-fr="Type de clientèle recherché"
+                    >Practice type sought</label
+                  >
+                  <div class="checkbox-group" style="align-items: center">
+                    <label
+                      ><input type="checkbox" checked /> Financial
+                      planning</label
+                    >
+                    <label
+                      ><input type="checkbox" checked /> Investment
+                      advisory</label
+                    >
+                    <label><input type="checkbox" /> Insurance</label>
+                    <label style="gap: 6px">
+                      <input
+                        type="checkbox"
+                        id="otherPracticeToggle"
+                        onchange="
+                          document.getElementById(
+                            'otherPracticeInput',
+                          ).style.display = this.checked
+                            ? 'inline-block'
+                            : 'none'
+                        "
+                      />
+                      Other
+                    </label>
+                    <input
+                      type="text"
+                      id="otherPracticeInput"
+                      placeholder="Please specify practice type..."
+                      style="
+                        display: none;
+                        height: 32px;
+                        padding: 4px 10px;
+                        font-size: 13px;
+                        border: 1px solid #cbd5e1;
+                        border-radius: 4px;
+                        min-width: 220px;
+                        flex-grow: 1;
+                      "
+                    />
+                  </div>
+                </div>
+
+                <!-- SECTION 3: ACQUISITION TARGETS -->
+                <div
+                  class="form-section-title"
+                  data-en="3. Acquisition Targets & Criteria"
+                  data-fr="3. Cibles d'acquisition et critères"
+                >
+                  3. Acquisition Targets & Criteria
+                </div>
+
+                <div class="field">
+                  <label
+                    data-en="Preferred practice province(s)"
+                    data-fr="Province(s) de pratique préférée(s)"
+                    >Preferred practice province(s)</label
+                  >
+                  <select>
+                    <option selected>Ontario (ON)</option>
+                    <option>British Columbia (BC)</option>
+                    <option>Alberta (AB)</option>
+                    <option>Quebec (QC)</option>
+                    <option value="">Any province</option>
+                  </select>
+                </div>
+
+                <div class="field">
+                  <label
+                    data-en="Preferred city / region"
+                    data-fr="Ville / région préférée"
+                    >Preferred city / region</label
+                  >
+                  <input type="text" value="Toronto, GTA, Ottawa" />
+                </div>
+
+                <div class="field">
+                  <label
+                    data-en="Target AUM minimum (CAD)"
+                    data-fr="ASG cible minimum (CAD)"
+                    >Target AUM minimum (CAD)</label
+                  >
+                  <input
+                    type="number"
+                    value="10000000"
+                    placeholder="e.g. 10000000"
+                  />
+                </div>
+
+                <div class="field">
+                  <label
+                    data-en="Target AUM maximum (CAD)"
+                    data-fr="ASG cible maximum (CAD)"
+                    >Target AUM maximum (CAD)</label
+                  >
+                  <input
+                    type="number"
+                    value="50000000"
+                    placeholder="e.g. 50000000"
+                  />
+                </div>
+
+                <div class="field">
+                  <label
+                    data-en="Acquisition budget min (CAD)"
+                    data-fr="Budget d'acquisition min (CAD)"
+                    >Acquisition budget min (CAD)</label
+                  >
+                  <input
+                    type="number"
+                    value="500000"
+                    placeholder="e.g. 500000"
+                  />
+                </div>
+
+                <div class="field">
+                  <label
+                    data-en="Acquisition budget max (CAD)"
+                    data-fr="Budget d'acquisition max (CAD)"
+                    >Acquisition budget max (CAD)</label
+                  >
+                  <input
+                    type="number"
+                    value="1000000"
+                    placeholder="e.g. 1000000"
+                  />
+                </div>
+
+                <!-- PURCHASE TIMEFRAME DROPDOWN -->
+                <div class="field" style="grid-column: 1/-1">
+                  <label
+                    data-en="Purchase timeframe"
+                    data-fr="Échéancier d'achat"
+                    >Purchase timeframe</label
+                  >
+                  <select>
+                    <option
+                      value="anytime"
+                      selected
+                      data-en="Anytime (Ongoing / No expiry)"
+                      data-fr="En tout temps (Continu / Sans expiration)"
+                    >
+                      Anytime (Ongoing / No expiry)
+                    </option>
+                    <option value="1w" data-en="1 week" data-fr="1 semaine">
+                      1 week
+                    </option>
+                    <option value="2w" data-en="2 weeks" data-fr="2 semaines">
+                      2 weeks
+                    </option>
+                    <option value="3w" data-en="3 weeks" data-fr="3 semaines">
+                      3 semaines
+                    </option>
+                    <option value="1m" data-en="1 month" data-fr="1 mois">
+                      1 month
+                    </option>
+                    <option value="2m" data-en="2 months" data-fr="2 mois">
+                      2 months
+                    </option>
+                    <option value="3m" data-en="3 months" data-fr="3 mois">
+                      3 months
+                    </option>
+                    <option value="6m" data-en="6 months" data-fr="6 mois">
+                      6 months
+                    </option>
+                    <option value="1y" data-en="1 year" data-fr="1 an">
+                      1 year
+                    </option>
+                    <option value="2y" data-en="2 years" data-fr="2 ans">
+                      2 years
+                    </option>
+                  </select>
+                  <span
+                    class="field-hint"
+                    data-en="Selecting “Anytime” keeps your alert profile actively matching indefinitely until modified."
+                    data-fr="Sélectionner « En tout temps » conserve votre profil d'alerte actif indéfiniment jusqu'à modification."
+                    >Selecting “Anytime” keeps your alert profile actively
+                    matching indefinitely until modified.</span
+                  >
+                </div>
+
+                <div class="field">
+                  <label
+                    data-en="Financing status"
+                    data-fr="Statut de financement"
+                    >Financing status</label
+                  >
+                  <select>
+                    <option selected>Available cash</option>
+                    <option>Pre-approved</option>
+                    <option>Seeking financing</option>
+                    <option>Undecided</option>
+                  </select>
+                </div>
+
+                <div class="field">
+                  <label
+                    data-en="Preferred seller transition support"
+                    data-fr="Soutien de transition vendeur préféré"
+                    >Preferred seller transition support</label
+                  >
+                  <select>
+                    <option>None</option>
+                    <option>3 months</option>
+                    <option selected>6 months</option>
+                    <option>12 months</option>
+                    <option>Flexible</option>
+                  </select>
+                </div>
+
+                <!-- SECTION 4: PREFERENCES & ALERT DELIVERY -->
+                <div
+                  class="form-section-title"
+                  data-en="4. Additional Preferences & Delivery"
+                  data-fr="4. Préférences supplémentaires et livraison"
+                >
+                  4. Additional Preferences & Delivery
+                </div>
+
+                <div class="field" style="grid-column: 1/-1">
+                  <label
+                    data-en="Additional acquisition preferences"
+                    data-fr="Préférences d'acquisition supplémentaires"
+                    >Additional acquisition preferences</label
+                  >
+                  <textarea
+                    rows="3"
+                    style="
+                      width: 100%;
+                      box-sizing: border-box;
+                      border: 1px solid #cbd5e1;
+                      border-radius: 4px;
+                      padding: 8px;
+                      font-family: inherit;
+                    "
+                  >
+Seeking established fee-for-service client book with dedicated administrative staff open to remaining post-transaction.</textarea
+                  >
+                </div>
+
+                <div class="field">
+                  <label
+                    data-en="Notification frequency"
+                    data-fr="Fréquence de notification"
+                    >Notification frequency</label
+                  >
+                  <select>
+                    <option selected data-en="Instant" data-fr="Instantanée">
+                      Instant
+                    </option>
+                    <option
+                      data-en="Weekly roundup"
+                      data-fr="Résumé hebdomadaire"
+                    >
+                      Weekly roundup
+                    </option>
+                  </select>
+                </div>
+
+                <div class="field">
+                  <label data-en="Alert language" data-fr="Langue d'alerte"
+                    >Alert language</label
+                  >
+                  <select>
+                    <option selected>English</option>
+                    <option>Français</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="row-actions" style="margin-top: 20px">
+                <button
+                  class="btn btn-gold"
+                  type="button"
+                  data-en="Save preferences"
+                  data-fr="Enregistrer les préférences"
+                >
+                  Save preferences
+                </button>
+                <button
+                  class="btn btn-ghost"
+                  type="button"
+                  data-en="Cancel"
+                  data-fr="Annuler"
+                >
+                  Cancel
+                </button>
+              </div>
+            </section>
+          </div>
+
+          <aside class="stack">
+            <section class="card">
+              <h2
+                data-en="Active buyer profile"
+                data-fr="Profil d'acheteur actif"
+              >
+                Active buyer profile
+              </h2>
+
+              <div
+                class="sidebar-section-title"
+                data-en="Account"
+                data-fr="Compte"
+              >
+                Account
+              </div>
+              <div class="check">
+                <span data-en="Buyer name" data-fr="Nom de l'acheteur"
+                  >Buyer name</span
+                ><strong>Sarah Jenkins</strong>
+              </div>
+              <div class="check">
+                <span data-en="Contact" data-fr="Contact">Contact</span
+                ><strong>+1 (416) 555-0144</strong>
+              </div>
+
+              <div
+                class="sidebar-section-title"
+                data-en="Professional"
+                data-fr="Professionnel"
+              >
+                Professional
+              </div>
+              <div class="check">
+                <span data-en="Licences" data-fr="Permis">Licences</span
+                ><strong>ON, BC</strong>
+              </div>
+              <div class="check">
+                <span data-en="Designations" data-fr="Titres">Designations</span
+                ><strong>CFP, CIRO</strong>
+              </div>
+              <div class="check">
+                <span data-en="Type sought" data-fr="Type recherché"
+                  >Type sought</span
+                ><strong data-en="Financial planning" data-fr="Planification"
+                  >Financial planning</strong
+                >
+              </div>
+
+              <div
+                class="sidebar-section-title"
+                data-en="Target Criteria"
+                data-fr="Critères cibles"
+              >
+                Target Criteria
+              </div>
+              <div class="check">
+                <span data-en="Province(s)" data-fr="Province(s)"
+                  >Province(s)</span
+                ><strong>Ontario (ON)</strong>
+              </div>
+              <div class="check">
+                <span data-en="City / Region" data-fr="Ville / Région"
+                  >City / Region</span
+                ><strong>Toronto, GTA</strong>
+              </div>
+              <div class="check">
+                <span data-en="Target AUM" data-fr="ASG cible">Target AUM</span
+                ><strong>$10M – $50M CAD</strong>
+              </div>
+              <div class="check">
+                <span data-en="Budget range" data-fr="Tranche de budget"
+                  >Budget range</span
+                ><strong>$500K – $1.0M CAD</strong>
+              </div>
+              <div class="check">
+                <span data-en="Purchase timeframe" data-fr="Échéancier d'achat"
+                  >Purchase timeframe</span
+                ><strong
+                  data-en="Anytime (Ongoing)"
+                  data-fr="En tout temps (Continu)"
+                  >Anytime (Ongoing)</strong
+                >
+              </div>
+              <div class="check">
+                <span data-en="Financing" data-fr="Financement">Financing</span
+                ><strong data-en="Available cash" data-fr="Comptant disponible"
+                  >Available cash</strong
+                >
+              </div>
+              <div class="check">
+                <span data-en="Transition" data-fr="Transition">Transition</span
+                ><strong>6 months</strong>
+              </div>
+
+              <div
+                class="sidebar-section-title"
+                data-en="Delivery"
+                data-fr="Livraison"
+              >
+                Delivery
+              </div>
+              <div class="check">
+                <span data-en="Frequency" data-fr="Fréquence">Frequency</span
+                ><strong data-en="Instant" data-fr="Instantanée"
+                  >Instant</strong
+                >
+              </div>
+              <div class="check">
+                <span data-en="Language" data-fr="Langue">Language</span
+                ><strong>English</strong>
+              </div>
+            </section>
+
+            <div
+              class="note"
+              data-en="Every listing is reviewed and authorized by Advisor Capital before any alert is sent. No number of alerts is guaranteed."
+              data-fr="Chaque inscription est examinée et autorisée par Advisor Capital avant l'envoi de toute alerte. Aucun nombre d'alertes n'est garanti."
+            >
+              Every listing is reviewed and authorized by Advisor Capital before
+              any alert is sent. No number of alerts is guaranteed.
+            </div>
+          </aside>
+        </div>
+      </main>
     </div>
-    <p class="site-footer__disclosure">
-      <strong>Regulatory Disclosure:</strong> Advisor Capital Inc. is an independent technology platform facilitating introductions between financial professionals. Advisor Capital is NOT a registered lender, financial advisor, investment dealer, or mortgage broker, and is not supervised by the Autorité des marchés financiers (AMF) or CIRO in connection with platform activities. This preliminary report is generated for informational purposes only and does not constitute a formal appraisal, legal advice, or financial planning opinion.
-    </p>
-    <p class="site-footer__copyright">© 2026 Advisor Capital Inc. All rights reserved.</p>
-  </footer>
-  <script src="lang.js"></script>
-</body>
+
+    <footer class="site-footer">
+      <div class="site-footer__contact">
+        <div class="site-footer__brand">
+          <img
+            src="https://www.advisorcapital.ca/wp-content/uploads/2026/06/icon_gold_optimized.svg"
+            alt="Advisor Capital Logo"
+            width="36"
+          />
+          <div>
+            <div class="site-footer__wordmark">Advisor<span>Capital</span></div>
+            <div class="site-footer__tagline">
+              ACQUISITION &amp; SUCCESSION PLATFORM · CANADA
+            </div>
+          </div>
+        </div>
+        <div class="site-footer__links">
+          <a href="mailto:info@advisorcapital.ca">info@advisorcapital.ca</a>
+          <a
+            href="https://advisorcapital.ca"
+            target="_blank"
+            rel="noopener noreferrer"
+            >AdvisorCapital.ca</a
+          >
+        </div>
+      </div>
+      <p class="site-footer__disclosure">
+        <strong>Regulatory Disclosure:</strong> Advisor Capital Inc. is an
+        independent technology platform facilitating introductions between
+        financial professionals. Advisor Capital is NOT a registered lender,
+        financial advisor, investment dealer, or mortgage broker, and is not
+        supervised by the Autorité des marchés financiers (AMF) or CIRO in
+        connection with platform activities. This preliminary report is
+        generated for informational purposes only and does not constitute a
+        formal appraisal, legal advice, or financial planning opinion.
+      </p>
+      <p class="site-footer__copyright">
+        © 2026 Advisor Capital Inc. All rights reserved.
+      </p>
+    </footer>
+    <script src="lang.js"></script>
+  </body>
 </html>

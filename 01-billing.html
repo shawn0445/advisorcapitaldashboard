@@ -29,24 +29,21 @@
         opacity: 1;
       }
 
-      /* Gold Circle Crown Seal Styling */
+      /* Logo container with background circle completely removed */
       .seal {
-        width: 48px;
-        height: 48px;
-        border-radius: 50%;
-        background: linear-gradient(
-          135deg,
-          #f3e7c4 0%,
-          #d4a84a 50%,
-          #b8860b 100%
-        );
+        background: none;
+        border: none;
+        box-shadow: none;
+        padding: 0;
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 22px;
-        color: #ffffff;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
         flex-shrink: 0;
+      }
+      .seal img {
+        width: 38px;
+        height: auto;
+        display: block;
       }
     </style>
   </head>
@@ -159,7 +156,12 @@
 
         <div class="card hero-plan" style="margin-bottom: 16px">
           <div class="plan-id">
-            <div class="seal">♛</div>
+            <div class="seal">
+              <img
+                src="https://www.advisorcapital.ca/wp-content/uploads/2026/06/icon_gold_optimized.svg"
+                alt="Advisor Capital Icon"
+              />
+            </div>
             <div>
               <h2 data-en="Premium Buyer" data-fr="Acheteur Premium">
                 Premium Buyer

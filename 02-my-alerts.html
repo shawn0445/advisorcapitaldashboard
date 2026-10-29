@@ -384,11 +384,20 @@
                     >Preferred practice province(s)</label
                   >
                   <select>
-                    <option selected>Ontario (ON)</option>
-                    <option>British Columbia (BC)</option>
-                    <option>Alberta (AB)</option>
-                    <option>Quebec (QC)</option>
                     <option value="">Any province</option>
+                    <option value="ON" selected>Ontario (ON)</option>
+                    <option value="QC">Quebec (QC)</option>
+                    <option value="BC">British Columbia (BC)</option>
+                    <option value="AB">Alberta (AB)</option>
+                    <option value="MB">Manitoba (MB)</option>
+                    <option value="SK">Saskatchewan (SK)</option>
+                    <option value="NS">Nova Scotia (NS)</option>
+                    <option value="NB">New Brunswick (NB)</option>
+                    <option value="NL">Newfoundland and Labrador (NL)</option>
+                    <option value="PE">Prince Edward Island (PE)</option>
+                    <option value="YT">Yukon (YT)</option>
+                    <option value="NT">Northwest Territories (NT)</option>
+                    <option value="NU">Nunavut (NU)</option>
                   </select>
                 </div>
 
@@ -398,7 +407,60 @@
                     data-fr="Ville / région préférée"
                     >Preferred city / region</label
                   >
-                  <input type="text" value="Toronto, GTA, Ottawa" />
+                  <input
+                    type="text"
+                    list="canadian-cities"
+                    value="Toronto, GTA, Ottawa"
+                    placeholder="Type to search Canadian cities..."
+                  />
+                  <datalist id="canadian-cities">
+                    <!-- Ontario -->
+                    <option value="Toronto, ON"></option>
+                    <option value="Ottawa, ON"></option>
+                    <option value="Mississauga, ON"></option>
+                    <option value="Brampton, ON"></option>
+                    <option value="Hamilton, ON"></option>
+                    <option value="London, ON"></option>
+                    <option value="Markham, ON"></option>
+                    <option value="Vaughan, ON"></option>
+                    <option value="Kitchener, ON"></option>
+                    <option value="Windsor, ON"></option>
+                    <option value="Greater Toronto Area (GTA), ON"></option>
+                    <!-- Quebec -->
+                    <option value="Montreal, QC"></option>
+                    <option value="Quebec City, QC"></option>
+                    <option value="Laval, QC"></option>
+                    <option value="Gatineau, QC"></option>
+                    <option value="Longueuil, QC"></option>
+                    <option value="Sherbrooke, QC"></option>
+                    <!-- British Columbia -->
+                    <option value="Vancouver, BC"></option>
+                    <option value="Surrey, BC"></option>
+                    <option value="Burnaby, BC"></option>
+                    <option value="Richmond, BC"></option>
+                    <option value="Victoria, BC"></option>
+                    <option value="Kelowna, BC"></option>
+                    <!-- Alberta -->
+                    <option value="Calgary, AB"></option>
+                    <option value="Edmonton, AB"></option>
+                    <option value="Red Deer, AB"></option>
+                    <option value="Lethbridge, AB"></option>
+                    <!-- Manitoba & Saskatchewan -->
+                    <option value="Winnipeg, MB"></option>
+                    <option value="Saskatoon, SK"></option>
+                    <option value="Regina, SK"></option>
+                    <!-- Atlantic Canada -->
+                    <option value="Halifax, NS"></option>
+                    <option value="Moncton, NB"></option>
+                    <option value="Saint John, NB"></option>
+                    <option value="Fredericton, NB"></option>
+                    <option value="St. John's, NL"></option>
+                    <option value="Charlottetown, PE"></option>
+                    <!-- Territories -->
+                    <option value="Whitehorse, YT"></option>
+                    <option value="Yellowknife, NT"></option>
+                    <option value="Iqaluit, NU"></option>
+                  </datalist>
                 </div>
 
                 <div class="field">
@@ -462,47 +524,41 @@
                   >
                   <select>
                     <option
-                      value="anytime"
+                      value="0-6m"
                       selected
-                      data-en="Anytime (Ongoing / No expiry)"
-                      data-fr="En tout temps (Continu / Sans expiration)"
+                      data-en="0 - 6 months"
+                      data-fr="0 - 6 mois"
                     >
-                      Anytime (Ongoing / No expiry)
+                      0 - 6 months
                     </option>
-                    <option value="1w" data-en="1 week" data-fr="1 semaine">
-                      1 week
+                    <option
+                      value="0-12m"
+                      data-en="0 - 12 months"
+                      data-fr="0 - 12 mois"
+                    >
+                      0 - 12 months
                     </option>
-                    <option value="2w" data-en="2 weeks" data-fr="2 semaines">
-                      2 weeks
+                    <option
+                      value="12-36m"
+                      data-en="12 - 36 months"
+                      data-fr="12 - 36 mois"
+                    >
+                      12 - 36 months
                     </option>
-                    <option value="3w" data-en="3 weeks" data-fr="3 semaines">
-                      3 semaines
-                    </option>
-                    <option value="1m" data-en="1 month" data-fr="1 mois">
-                      1 month
-                    </option>
-                    <option value="2m" data-en="2 months" data-fr="2 mois">
-                      2 months
-                    </option>
-                    <option value="3m" data-en="3 months" data-fr="3 mois">
-                      3 months
-                    </option>
-                    <option value="6m" data-en="6 months" data-fr="6 mois">
-                      6 months
-                    </option>
-                    <option value="1y" data-en="1 year" data-fr="1 an">
-                      1 year
-                    </option>
-                    <option value="2y" data-en="2 years" data-fr="2 ans">
-                      2 years
+                    <option
+                      value="ongoing"
+                      data-en="Ongoing / No Expiry"
+                      data-fr="Continu / Sans expiration"
+                    >
+                      Ongoing / No Expiry
                     </option>
                   </select>
                   <span
                     class="field-hint"
-                    data-en="Selecting “Anytime” keeps your alert profile actively matching indefinitely until modified."
-                    data-fr="Sélectionner « En tout temps » conserve votre profil d'alerte actif indéfiniment jusqu'à modification."
-                    >Selecting “Anytime” keeps your alert profile actively
-                    matching indefinitely until modified.</span
+                    data-en="Selecting “Ongoing / No Expiry” keeps your alert profile actively matching indefinitely until modified."
+                    data-fr="Sélectionner « Continu / Sans expiration » conserve votre profil d'alerte actif indéfiniment jusqu'à modification."
+                    >Selecting “Ongoing / No Expiry” keeps your alert profile
+                    actively matching indefinitely until modified.</span
                   >
                 </div>
 
@@ -531,6 +587,7 @@
                     <option>3 months</option>
                     <option selected>6 months</option>
                     <option>12 months</option>
+                    <option>Up to 24 months</option>
                     <option>Flexible</option>
                   </select>
                 </div>
@@ -694,10 +751,8 @@ Seeking established fee-for-service client book with dedicated administrative st
               <div class="check">
                 <span data-en="Purchase timeframe" data-fr="Échéancier d'achat"
                   >Purchase timeframe</span
-                ><strong
-                  data-en="Anytime (Ongoing)"
-                  data-fr="En tout temps (Continu)"
-                  >Anytime (Ongoing)</strong
+                ><strong data-en="0 - 6 months" data-fr="0 - 6 mois"
+                  >0 - 6 months</strong
                 >
               </div>
               <div class="check">

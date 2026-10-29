@@ -77,6 +77,53 @@
         margin-top: 4px;
         display: block;
       }
+
+      /* Custom Searchable Select Styling matching native selects */
+      .searchable-select-container {
+        position: relative;
+      }
+      .searchable-select-input {
+        width: 100%;
+        box-sizing: border-box;
+        border: 1px solid #cbd5e1;
+        border-radius: 4px;
+        padding: 8px 12px;
+        font-family: inherit;
+        font-size: 14px;
+        background-color: #fff;
+        color: #0b132b;
+        outline: none;
+      }
+      .searchable-select-input:focus {
+        border-color: #0b132b;
+        box-shadow: 0 0 0 1px #0b132b;
+      }
+      .searchable-dropdown-list {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #ffffff;
+        border: 1px solid #cbd5e1;
+        border-top: none;
+        border-bottom-left-radius: 4px;
+        border-bottom-right-radius: 4px;
+        max-height: 200px;
+        overflow-y: auto;
+        z-index: 100;
+        display: none;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      }
+      .searchable-dropdown-item {
+        padding: 8px 12px;
+        font-size: 14px;
+        color: #334155;
+        cursor: pointer;
+      }
+      .searchable-dropdown-item:hover {
+        background-color: #757575;
+        color: #ffffff;
+      }
     </style>
   </head>
   <body>
@@ -407,60 +454,252 @@
                     data-fr="Ville / région préférée"
                     >Preferred city / region</label
                   >
-                  <input
-                    type="text"
-                    list="canadian-cities"
-                    value="Toronto, GTA, Ottawa"
-                    placeholder="Type to search Canadian cities..."
-                  />
-                  <datalist id="canadian-cities">
-                    <!-- Ontario -->
-                    <option value="Toronto, ON"></option>
-                    <option value="Ottawa, ON"></option>
-                    <option value="Mississauga, ON"></option>
-                    <option value="Brampton, ON"></option>
-                    <option value="Hamilton, ON"></option>
-                    <option value="London, ON"></option>
-                    <option value="Markham, ON"></option>
-                    <option value="Vaughan, ON"></option>
-                    <option value="Kitchener, ON"></option>
-                    <option value="Windsor, ON"></option>
-                    <option value="Greater Toronto Area (GTA), ON"></option>
-                    <!-- Quebec -->
-                    <option value="Montreal, QC"></option>
-                    <option value="Quebec City, QC"></option>
-                    <option value="Laval, QC"></option>
-                    <option value="Gatineau, QC"></option>
-                    <option value="Longueuil, QC"></option>
-                    <option value="Sherbrooke, QC"></option>
-                    <!-- British Columbia -->
-                    <option value="Vancouver, BC"></option>
-                    <option value="Surrey, BC"></option>
-                    <option value="Burnaby, BC"></option>
-                    <option value="Richmond, BC"></option>
-                    <option value="Victoria, BC"></option>
-                    <option value="Kelowna, BC"></option>
-                    <!-- Alberta -->
-                    <option value="Calgary, AB"></option>
-                    <option value="Edmonton, AB"></option>
-                    <option value="Red Deer, AB"></option>
-                    <option value="Lethbridge, AB"></option>
-                    <!-- Manitoba & Saskatchewan -->
-                    <option value="Winnipeg, MB"></option>
-                    <option value="Saskatoon, SK"></option>
-                    <option value="Regina, SK"></option>
-                    <!-- Atlantic Canada -->
-                    <option value="Halifax, NS"></option>
-                    <option value="Moncton, NB"></option>
-                    <option value="Saint John, NB"></option>
-                    <option value="Fredericton, NB"></option>
-                    <option value="St. John's, NL"></option>
-                    <option value="Charlottetown, PE"></option>
-                    <!-- Territories -->
-                    <option value="Whitehorse, YT"></option>
-                    <option value="Yellowknife, NT"></option>
-                    <option value="Iqaluit, NU"></option>
-                  </datalist>
+                  <div class="searchable-select-container">
+                    <input
+                      type="text"
+                      id="citySearchInput"
+                      class="searchable-select-input"
+                      value="Toronto, GTA, Ottawa"
+                      placeholder="Type to search Canadian cities..."
+                      autocomplete="off"
+                    />
+                    <div id="cityDropdownList" class="searchable-dropdown-list">
+                      <div
+                        class="searchable-dropdown-item"
+                        onclick="selectCity('Toronto, ON')"
+                      >
+                        Toronto, ON
+                      </div>
+                      <div
+                        class="searchable-dropdown-item"
+                        onclick="selectCity('Ottawa, ON')"
+                      >
+                        Ottawa, ON
+                      </div>
+                      <div
+                        class="searchable-dropdown-item"
+                        onclick="selectCity('Mississauga, ON')"
+                      >
+                        Mississauga, ON
+                      </div>
+                      <div
+                        class="searchable-dropdown-item"
+                        onclick="selectCity('Brampton, ON')"
+                      >
+                        Brampton, ON
+                      </div>
+                      <div
+                        class="searchable-dropdown-item"
+                        onclick="selectCity('Hamilton, ON')"
+                      >
+                        Hamilton, ON
+                      </div>
+                      <div
+                        class="searchable-dropdown-item"
+                        onclick="selectCity('London, ON')"
+                      >
+                        London, ON
+                      </div>
+                      <div
+                        class="searchable-dropdown-item"
+                        onclick="selectCity('Markham, ON')"
+                      >
+                        Markham, ON
+                      </div>
+                      <div
+                        class="searchable-dropdown-item"
+                        onclick="selectCity('Vaughan, ON')"
+                      >
+                        Vaughan, ON
+                      </div>
+                      <div
+                        class="searchable-dropdown-item"
+                        onclick="selectCity('Kitchener, ON')"
+                      >
+                        Kitchener, ON
+                      </div>
+                      <div
+                        class="searchable-dropdown-item"
+                        onclick="selectCity('Windsor, ON')"
+                      >
+                        Windsor, ON
+                      </div>
+                      <div
+                        class="searchable-dropdown-item"
+                        onclick="selectCity('Greater Toronto Area (GTA), ON')"
+                      >
+                        Greater Toronto Area (GTA), ON
+                      </div>
+                      <div
+                        class="searchable-dropdown-item"
+                        onclick="selectCity('Montreal, QC')"
+                      >
+                        Montreal, QC
+                      </div>
+                      <div
+                        class="searchable-dropdown-item"
+                        onclick="selectCity('Quebec City, QC')"
+                      >
+                        Quebec City, QC
+                      </div>
+                      <div
+                        class="searchable-dropdown-item"
+                        onclick="selectCity('Laval, QC')"
+                      >
+                        Laval, QC
+                      </div>
+                      <div
+                        class="searchable-dropdown-item"
+                        onclick="selectCity('Gatineau, QC')"
+                      >
+                        Gatineau, QC
+                      </div>
+                      <div
+                        class="searchable-dropdown-item"
+                        onclick="selectCity('Longueuil, QC')"
+                      >
+                        Longueuil, QC
+                      </div>
+                      <div
+                        class="searchable-dropdown-item"
+                        onclick="selectCity('Sherbrooke, QC')"
+                      >
+                        Sherbrooke, QC
+                      </div>
+                      <div
+                        class="searchable-dropdown-item"
+                        onclick="selectCity('Vancouver, BC')"
+                      >
+                        Vancouver, BC
+                      </div>
+                      <div
+                        class="searchable-dropdown-item"
+                        onclick="selectCity('Surrey, BC')"
+                      >
+                        Surrey, BC
+                      </div>
+                      <div
+                        class="searchable-dropdown-item"
+                        onclick="selectCity('Burnaby, BC')"
+                      >
+                        Burnaby, BC
+                      </div>
+                      <div
+                        class="searchable-dropdown-item"
+                        onclick="selectCity('Richmond, BC')"
+                      >
+                        Richmond, BC
+                      </div>
+                      <div
+                        class="searchable-dropdown-item"
+                        onclick="selectCity('Victoria, BC')"
+                      >
+                        Victoria, BC
+                      </div>
+                      <div
+                        class="searchable-dropdown-item"
+                        onclick="selectCity('Kelowna, BC')"
+                      >
+                        Kelowna, BC
+                      </div>
+                      <div
+                        class="searchable-dropdown-item"
+                        onclick="selectCity('Calgary, AB')"
+                      >
+                        Calgary, AB
+                      </div>
+                      <div
+                        class="searchable-dropdown-item"
+                        onclick="selectCity('Edmonton, AB')"
+                      >
+                        Edmonton, AB
+                      </div>
+                      <div
+                        class="searchable-dropdown-item"
+                        onclick="selectCity('Red Deer, AB')"
+                      >
+                        Red Deer, AB
+                      </div>
+                      <div
+                        class="searchable-dropdown-item"
+                        onclick="selectCity('Lethbridge, AB')"
+                      >
+                        Lethbridge, AB
+                      </div>
+                      <div
+                        class="searchable-dropdown-item"
+                        onclick="selectCity('Winnipeg, MB')"
+                      >
+                        Winnipeg, MB
+                      </div>
+                      <div
+                        class="searchable-dropdown-item"
+                        onclick="selectCity('Saskatoon, SK')"
+                      >
+                        Saskatoon, SK
+                      </div>
+                      <div
+                        class="searchable-dropdown-item"
+                        onclick="selectCity('Regina, SK')"
+                      >
+                        Regina, SK
+                      </div>
+                      <div
+                        class="searchable-dropdown-item"
+                        onclick="selectCity('Halifax, NS')"
+                      >
+                        Halifax, NS
+                      </div>
+                      <div
+                        class="searchable-dropdown-item"
+                        onclick="selectCity('Moncton, NB')"
+                      >
+                        Moncton, NB
+                      </div>
+                      <div
+                        class="searchable-dropdown-item"
+                        onclick="selectCity('Saint John, NB')"
+                      >
+                        Saint John, NB
+                      </div>
+                      <div
+                        class="searchable-dropdown-item"
+                        onclick="selectCity('Fredericton, NB')"
+                      >
+                        Fredericton, NB
+                      </div>
+                      <div
+                        class="searchable-dropdown-item"
+                        onclick="selectCity('St. John\'s, NL')"
+                      >
+                        St. John's, NL
+                      </div>
+                      <div
+                        class="searchable-dropdown-item"
+                        onclick="selectCity('Charlottetown, PE')"
+                      >
+                        Charlottetown, PE
+                      </div>
+                      <div
+                        class="searchable-dropdown-item"
+                        onclick="selectCity('Whitehorse, YT')"
+                      >
+                        Whitehorse, YT
+                      </div>
+                      <div
+                        class="searchable-dropdown-item"
+                        onclick="selectCity('Yellowknife, NT')"
+                      >
+                        Yellowknife, NT
+                      </div>
+                      <div
+                        class="searchable-dropdown-item"
+                        onclick="selectCity('Iqaluit, NU')"
+                      >
+                        Iqaluit, NU
+                      </div>
+                    </div>
+                  </div>
                 </div>
 
                 <div class="field">
@@ -737,7 +976,7 @@ Seeking established fee-for-service client book with dedicated administrative st
               <div class="check">
                 <span data-en="City / Region" data-fr="Ville / Région"
                   >City / Region</span
-                ><strong>Toronto, GTA</strong>
+                ><strong>Toronto, GTA, Ottawa</strong>
               </div>
               <div class="check">
                 <span data-en="Target AUM" data-fr="ASG cible">Target AUM</span
@@ -838,5 +1077,43 @@ Seeking established fee-for-service client book with dedicated administrative st
       </p>
     </footer>
     <script src="lang.js"></script>
+    <script>
+      // Script for type-to-search custom dropdown matching native input/select style
+      const searchInput = document.getElementById("citySearchInput");
+      const dropdownList = document.getElementById("cityDropdownList");
+      const items = dropdownList.querySelectorAll(".searchable-dropdown-item");
+
+      searchInput.addEventListener("focus", () => {
+        dropdownList.style.display = "block";
+      });
+
+      searchInput.addEventListener("input", () => {
+        const filter = searchInput.value.toLowerCase();
+        let visibleCount = 0;
+        items.forEach((item) => {
+          if (item.textContent.toLowerCase().includes(filter)) {
+            item.style.display = "block";
+            visibleCount++;
+          } else {
+            item.style.display = "none";
+          }
+        });
+        dropdownList.style.display = visibleCount > 0 ? "block" : "none";
+      });
+
+      function selectCity(cityName) {
+        searchInput.value = cityName;
+        dropdownList.style.display = "none";
+      }
+
+      document.addEventListener("click", (e) => {
+        if (
+          !searchInput.contains(e.target) &&
+          !dropdownList.contains(e.target)
+        ) {
+          dropdownList.style.display = "none";
+        }
+      });
+    </script>
   </body>
 </html>

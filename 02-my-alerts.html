@@ -140,7 +140,8 @@
       style="
         background-color: #0b132b;
         border-bottom: 3px solid #d4a84a;
-        padding: 24px 32px;
+        height: auto;
+        padding: 32px;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -321,6 +322,7 @@
                   </div>
                 </div>
 
+                <!-- PROFESSIONAL DESIGNATION / LICENCE (RADIO BUTTONS) -->
                 <div class="field" style="grid-column: 1/-1">
                   <label
                     data-en="Professional designation / licence"
@@ -328,23 +330,41 @@
                     >Professional designation / licence</label
                   >
                   <div class="checkbox-group" style="align-items: center">
-                    <label><input type="checkbox" checked /> CFP</label>
                     <label
-                      ><input type="checkbox" checked /> CIRO
-                      registration</label
+                      ><input
+                        type="radio"
+                        name="designation"
+                        value="CFP"
+                        checked
+                      />
+                      CFP</label
                     >
-                    <label><input type="checkbox" /> Insurance licence</label>
-                    <label><input type="checkbox" /> CFA</label>
+                    <label
+                      ><input type="radio" name="designation" value="CIRO" />
+                      CIRO registration</label
+                    >
+                    <label
+                      ><input
+                        type="radio"
+                        name="designation"
+                        value="Insurance"
+                      />
+                      Insurance licence</label
+                    >
+                    <label
+                      ><input type="radio" name="designation" value="CFA" />
+                      CFA</label
+                    >
                     <label style="gap: 6px">
                       <input
-                        type="checkbox"
+                        type="radio"
+                        name="designation"
+                        value="Other"
                         id="otherDesignationToggle"
                         onchange="
                           document.getElementById(
                             'otherDesignationInput',
-                          ).style.display = this.checked
-                            ? 'inline-block'
-                            : 'none'
+                          ).style.display = 'inline-block'
                         "
                       />
                       Other
@@ -352,7 +372,7 @@
                     <input
                       type="text"
                       id="otherDesignationInput"
-                      placeholder="Please specify designation(s)..."
+                      placeholder="Please specify designation..."
                       style="
                         display: none;
                         height: 32px;
@@ -367,6 +387,7 @@
                   </div>
                 </div>
 
+                <!-- PRACTICE TYPE SOUGHT (RADIO BUTTONS) -->
                 <div class="field" style="grid-column: 1/-1">
                   <label
                     data-en="Practice type sought"
@@ -375,24 +396,40 @@
                   >
                   <div class="checkbox-group" style="align-items: center">
                     <label
-                      ><input type="checkbox" checked /> Financial
-                      planning</label
+                      ><input
+                        type="radio"
+                        name="practice_type"
+                        value="Financial planning"
+                        checked
+                      />
+                      Financial planning</label
                     >
                     <label
-                      ><input type="checkbox" checked /> Investment
-                      advisory</label
+                      ><input
+                        type="radio"
+                        name="practice_type"
+                        value="Investment advisory"
+                      />
+                      Investment advisory</label
                     >
-                    <label><input type="checkbox" /> Insurance</label>
+                    <label
+                      ><input
+                        type="radio"
+                        name="practice_type"
+                        value="Insurance"
+                      />
+                      Insurance</label
+                    >
                     <label style="gap: 6px">
                       <input
-                        type="checkbox"
+                        type="radio"
+                        name="practice_type"
+                        value="Other"
                         id="otherPracticeToggle"
                         onchange="
                           document.getElementById(
                             'otherPracticeInput',
-                          ).style.display = this.checked
-                            ? 'inline-block'
-                            : 'none'
+                          ).style.display = 'inline-block'
                         "
                       />
                       Other
@@ -1114,6 +1151,30 @@ Seeking established fee-for-service client book with dedicated administrative st
           dropdownList.style.display = "none";
         }
       });
+
+      // Hide 'Other' text input when non-other radio option is selected in designation group
+      document
+        .querySelectorAll('input[name="designation"]')
+        .forEach((radio) => {
+          radio.addEventListener("change", (e) => {
+            if (e.target.id !== "otherDesignationToggle") {
+              document.getElementById("otherDesignationInput").style.display =
+                "none";
+            }
+          });
+        });
+
+      // Hide 'Other' text input when non-other radio option is selected in practice_type group
+      document
+        .querySelectorAll('input[name="practice_type"]')
+        .forEach((radio) => {
+          radio.addEventListener("change", (e) => {
+            if (e.target.id !== "otherPracticeToggle") {
+              document.getElementById("otherPracticeInput").style.display =
+                "none";
+            }
+          });
+        });
     </script>
   </body>
 </html>
